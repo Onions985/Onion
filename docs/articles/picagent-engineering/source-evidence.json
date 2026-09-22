@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "picagent-ai-cost-snapshot",
+    "archiveDate": "2026-08-25",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "b722421d57e30254c1ad9f37edc0d515839f5af59724e17fc064819f361e45b1",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "44485d372b1dab973f56d1aef603201d778f9940",
+        "authoredAt": "2026-08-25T19:23:09+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/debug/aicost/DebugAiCostService.kt",
+            "sha256": "b864ed5779bc0b0484376645eb12777aa16cc2a1ffc33df9bc59d7e53a0bb050"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-video-processing-budget",
+    "archiveDate": "2026-09-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "9a749c1ab9768a9240a00aa5a6ab613ad4a8b64b6dacf8f30186ecde9ce60d11",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "5f0ad078668c4332a4c098003201aa3a7785710f",
+        "authoredAt": "2026-09-21T11:14:56+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/video/GeneratedVideoProcessingService.kt",
+            "sha256": "04bfb35c89d29c01814757766d9366bd2e10b4a74dbd929ce107bc73ed9c2261"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-human-review-snapshot",
+    "archiveDate": "2026-09-03",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "542979178149d704eb07f4fa7d2dd3245f19113774c230156b15732277f0863b",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "d709d1169eb70e2f5f4531fd03e63ad2ad86197f",
+        "authoredAt": "2026-09-03T22:18:25+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/character/storyline/humanreview/StorylineHumanReviewSubmissionService.kt",
+            "sha256": "08c2a7e4c4e4eb5f9dbc6804feea3d3a62322e6d89bb25aaa891fca519894085"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-worker-claim-indexes",
+    "archiveDate": "2026-08-10",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "fa27aaf6c6b92eedbfa98518cc49596376626e57312ace9ab079a273b8194ada",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "ea031b297260c884734fdf71b2ab38efd4a248f5",
+        "authoredAt": "2026-08-10T13:57:18+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/resources/db/migration/V105__Add_story_task_worker_claim_indexes.sql",
+            "sha256": "0005d87ca2b7a32fec6d7d4f00b9e31d96374938ee548d6086757fe2668f56a1"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/resources/mapper/StoryTaskMapper.xml",
+            "sha256": "25b06947b15e5e15ab3bf1a426e245b560b2ab8d5b93649bcafe4f9c50676d19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-immutable-subscription-offer",
+    "archiveDate": "2026-08-05",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "5dda913220d312eae2e983efa01e8c7df8b5952d9849b2163f1ab6917208174e",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "33fa54d13b7140c2eee3bf9fdeef350e3ba4f59a",
+        "authoredAt": "2026-08-05T19:23:59+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/resources/db/migration/V97__Add_storyline_subscription_commerce.sql",
+            "sha256": "1896f01683067196e2170708c0843934edfed90baf7f7ac3d456d8b56f5c63de"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-validated-layout-cache",
+    "archiveDate": "2026-08-14",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "286fc5697f6764c1bd68f88c5c893a201925cb0cbd6596529c3019fba11c131a",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "2c5e368568ef8d58391ea02741c44a2092a087df",
+        "authoredAt": "2026-08-14T15:16:53+08:00",
+        "files": [
+          {
+            "path": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/db/CharacterWorldAppLayoutCache.kt",
+            "sha256": "fea26c913db4efddd59c3d34b3d9b2f40c866897b75c1ab89b3c3cc370734daa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-preview-flight-coordination",
+    "archiveDate": "2026-09-01",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "24b5e40242b6c25e65c901f517b38b962d0c1a43e187676ca7dd91d6a1b1a9f7",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "689110266dd4a529edb4f80748186c501f537198",
+        "authoredAt": "2026-09-01T17:30:22+08:00",
+        "files": [
+          {
+            "path": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/preview/CharacterWorldAppPreviewProvider.kt",
+            "sha256": "e6026f0dc0b313ef604cf353f2bc2f59f728d64e7fc7568180e9300ab1a4d899"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-server-owned-price-contract",
+    "archiveDate": "2026-08-10",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "da730362e55ed60efc3540720d600c4ef17e75dd5e485b59d617d731a168895d",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "87d30e6da8247bf1930570038d90db27eba89955",
+        "authoredAt": "2026-08-10T14:06:15+08:00",
+        "files": [
+          {
+            "path": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/model/world/CharacterWorldAppCommerceModels.kt",
+            "sha256": "1d1067e42632a7cc95918386e741f20f54598f1ba01e4b8ae4bf69be348d5d01"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-composite-task-identity",
+    "archiveDate": "2026-07-27",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "84544427b1ea4202d7aecd40fc43787197c4269c0fcb9fc2c764d93e0fb8f2d1",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "8b2df63ff462aa4108fd4c3a5c1890fd44374264",
+        "authoredAt": "2026-07-27T20:30:11+08:00",
+        "files": [
+          {
+            "path": "shared-home/src/commonMain/kotlin/com/onion/picagent/kmp/home/model/generationtask/GenerationTaskModels.kt",
+            "sha256": "da82145d2c65d387dc8449998f566a8169475bda194ce7fd1f5280178a96e526"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-atomic-refresh-owner",
+    "archiveDate": "2026-08-01",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "dd021a42d58b015771f6614b228182e96292df7508c6a4f687871b842cb98227",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "b613be7298741e152326527e81c16769465511ce",
+        "authoredAt": "2026-08-01T23:47:50+08:00",
+        "files": [
+          {
+            "path": "domain/center/src/main/java/com/onion/picagent/center/datastore/GenerationRefreshBatchStore.kt",
+            "sha256": "196a965870c98c070747264efe2a5bd2a3ec714f9f7a9314403c7f9b3837fc8a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-desktop-action-authority",
+    "archiveDate": "2026-08-23",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "fbe5e26e99419c84d1492d32ed6400bf5ae5f0ef829bb34201153d51ad5985c5",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "4043cd569cece11f58b611182d9d79a021feb5ca",
+        "authoredAt": "2026-08-23T20:06:57+08:00",
+        "files": [
+          {
+            "path": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldAppActionAuthority.kt",
+            "sha256": "8bfbcfb8cfcd188514bc05a9a3ff98d4f37911e086f83b75bb8a89faed6f832e"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-memory-timeline-generations",
+    "archiveDate": "2026-09-01",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "b5944dfd44851379268fad89fa7997a05507fb5b5c3cf71652f699f916b62858",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "2598bcf823e83078335f2c3521a21dcc641d293b",
+        "authoredAt": "2026-09-01T17:30:23+08:00",
+        "files": [
+          {
+            "path": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/memory/CharacterWorldMemoryViewModel.kt",
+            "sha256": "b32b600dce14add47d12dcbe90c744f614966f845fc754fd9a1f64a98f892e58"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-terminal-push-validation",
+    "archiveDate": "2026-07-24",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "57d1e01503d3d62bc1ae81843d8133936595e55e1567acd4a4cba23c35ebb712",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "abb6a7a4ab5e3f557d73ac5ea6d6f2a14314c342",
+        "authoredAt": "2026-07-24T08:02:44+08:00",
+        "files": [
+          {
+            "path": "domain/center/src/main/java/com/onion/picagent/center/ui/push/GenerationTaskTerminalValidator.kt",
+            "sha256": "57579906264f9140695c4e9cc94d37a5ae3d54cead058b693c174e6fc6ab84ce"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-swiftui-effective-appearance",
+    "archiveDate": "2026-07-12",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "cee8f74ed7305dd4136b6f8e94f8e7c94932eb72239f138ecb02881a62a380c4",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "4fe649e34eea51069237265286ffe223b6a65c4c",
+        "authoredAt": "2026-07-12T22:19:06+08:00",
+        "files": [
+          {
+            "path": "Sources/Resource/Theme/AppThemeBox.swift",
+            "sha256": "4daf0d153d5376f894bb8431a521cf721ba18706c5bb4ed2e88aaaddc5d21a76"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-generation-coordinator-lifetime",
+    "archiveDate": "2026-07-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "7d0c0cbd64cd315b4ff89c54b93bbeaddf9cb9ecc341f14c916e3dad10c835f4",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "bbdd51d574c87e3c7319c0ce68c7f7e6e1d3c4bf",
+        "authoredAt": "2026-07-21T21:53:02+08:00",
+        "files": [
+          {
+            "path": "Sources/Base/Generation/PicAgentGenerationCoordinator.swift",
+            "sha256": "6d95789623c9ec5150118694afec1682b26e9a483f71a35029d9eec455a49883"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-follow-pagination-review",
+    "archiveDate": "2026-07-28",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "d95d862d2db682460ed8fe10a200999ed74792f455a279ca3400e8e2f7eaccaf",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "dbf284d0cf8a6648d95b9b210bc1cc9c9ddcc8e2",
+        "authoredAt": "2026-07-28T08:17:00+08:00",
+        "files": [
+          {
+            "path": "Sources/FeatureHome/Follow/FollowListPageViewModel.swift",
+            "sha256": "68ea9c8f614286f7d2349b2ece327b89630a82b16c670b7831ed6e6a19e6648a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-jpeg-quality-boundary",
+    "archiveDate": "2026-05-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "2d0efeec9a64711adbeea440eaccf9c66cc00cf24bcfa27e36e8420fa3d16d8e",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "13a331ba6405bb5431acf20301475ff6e3bbd48a",
+        "authoredAt": "2026-05-21T00:02:31+08:00",
+        "files": [
+          {
+            "path": "Sources/Base/Image/PicAgentUploadImageCompressor.swift",
+            "sha256": "7b4b26a8f84fc911bef46dc7760a80ba04c2f1fb18f9888a28bc213af2ce0474"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-session-invalidation-registry",
+    "archiveDate": "2026-08-31",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "c8cec1d953475140743668c5230d567c3e396fb6209b73a2dc5c1ef378a6209a",
+    "sources": [
+      {
+        "repo": "pic-agent-harmony",
+        "commit": "94641d6822129663d7255e490b2128bd172a3258",
+        "authoredAt": "2026-08-31T11:23:57+08:00",
+        "files": [
+          {
+            "path": "base/src/main/ets/auth/SessionInvalidationRegistry.ets",
+            "sha256": "912c099745cc84ca103812b83554a6caf0bd52f7e0ec18e99b3223d1c06cb84d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-task-window-reducer",
+    "archiveDate": "2026-08-31",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "16e4a0f7d95fd764e6a4d40a472df52d1a1d066228689e6b6a0e41ff3b9635cc",
+    "sources": [
+      {
+        "repo": "pic-agent-harmony",
+        "commit": "94641d6822129663d7255e490b2128bd172a3258",
+        "authoredAt": "2026-08-31T11:23:57+08:00",
+        "files": [
+          {
+            "path": "home/src/main/ets/pages/mine/generationtask/GenerationTaskWindowReducer.ets",
+            "sha256": "0faed9abd04fa2cb2953002ae11355f795e935fb4cd54094b67616bc1433285b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-upload-attempt-identity",
+    "archiveDate": "2026-08-31",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "01e5e2211f6e5fd02118bfe6bc688aa1cd9318a71f9ec02b982741e19f834dc6",
+    "sources": [
+      {
+        "repo": "pic-agent-harmony",
+        "commit": "94641d6822129663d7255e490b2128bd172a3258",
+        "authoredAt": "2026-08-31T11:23:57+08:00",
+        "files": [
+          {
+            "path": "base/src/main/ets/media/ClientImageUploadAttemptSession.ets",
+            "sha256": "4e86a78574f94ad8c0e7ea80e69301259a1686d233ec345257c30619a002a346"
+          }
+        ]
+      }
+    ]
+  }
+]

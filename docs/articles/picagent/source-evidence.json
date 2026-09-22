@@ -1,0 +1,283 @@
+[
+  {
+    "slug": "picagent-harmony-shared-navigation",
+    "archiveDate": "2026-03-10",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "732a50c7a226afeaddebdecfa4b4467256a083f3daa03690ee64e47c4a3d6064",
+    "sources": [
+      {
+        "repo": "pic-agent-harmony",
+        "commit": "4091ef15953eeb90ea692accbbc492ffc135ad37",
+        "authoredAt": "2026-03-10T20:34:06+08:00",
+        "files": [
+          {
+            "path": "RouterManager/src/main/ets/RouterConstant.ets",
+            "sha256": "f9c0b727701dc1fe9187ed51f25e23f6bdfac1b5791b2d34294c1b7b361aa617"
+          },
+          {
+            "path": "model/src/main/ets/RouterModel.ets",
+            "sha256": "a9a776105c9190aed61c8cae9be7ea2d1e01932e66024f31f67556612b2ece58"
+          },
+          {
+            "path": "character/src/main/ets/pages/select/CharacterSelectedPage.ets",
+            "sha256": "ef28c774462e74153d71cd8a599625d7134cdf65849795719c1e51f0de939c96"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-kmp-token-refresh",
+    "archiveDate": "2026-04-28",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "acb6b51a44b860f43aa1e9abb335fd8e471ee7e431af06f88a5902f56d2d51d7",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "be0ad660f7c4da92a7e37f1ee2dbc087359fcce3",
+        "authoredAt": "2026-04-28T13:24:51+08:00",
+        "files": [
+          {
+            "path": "shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/network/NetworkAuthRefreshHandler.kt",
+            "sha256": "2e0910210058997f848a5897371e5bfb37067069af5af5fff6be78357a1a4b88"
+          },
+          {
+            "path": "shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/network/PicAgentHttpClientPlugins.kt",
+            "sha256": "ce660ae723c3a8ed3c4a9b1e4c44519312579e10c297dd61f942356e0f04fdbf"
+          },
+          {
+            "path": "shared-login/src/commonMain/kotlin/com/onion/picagent/kmp/login/data/LoginRepository.kt",
+            "sha256": "fac4539739e6955b7014d09720ec1380592d743825ff36bd6eb70ad76a0236b3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-android-chat-scroll",
+    "archiveDate": "2026-06-17",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "6971198f5aad9f8281052b8f6a3856e2686291a5621853ef7cb038eec2af8aa1",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "c3c2dca096535c468634854ffac47c6d01311f9d",
+        "authoredAt": "2026-06-17T23:25:14+08:00",
+        "files": [
+          {
+            "path": "feature/home/src/main/java/com/onion/picagent/home/engine/message/UserChatRoute.kt",
+            "sha256": "3bb0278aede461b1b1ac82e583952ea820214443a252f97f96f439aa5aa72707"
+          },
+          {
+            "path": "openspec/changes/p0-user-chat-preserve-scroll/implementation.md",
+            "sha256": "62b1fbed7d07f1b46077322d849b9591721a0baf22fdb05465a8ddbe1d251ebc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-ios-checkin-state",
+    "archiveDate": "2026-06-25",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "3d427f6b8aeff2f6f8c154e22a76abfc0fdc7b1d6a648e6a19110ea61ba1eeca",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "1710e0d57a53c2c461231a9e1cfe57fa53634a0e",
+        "authoredAt": "2026-06-25T00:21:33+08:00",
+        "files": [
+          {
+            "path": "Sources/DomainCenterProtocol/CheckinProviding.swift",
+            "sha256": "effa38f6988a876df8b47f09d7e412b45a38dee339dd0c9a057972dda05ab19c"
+          },
+          {
+            "path": "Sources/FeatureHome/Checkin/CheckinRootViewModel.swift",
+            "sha256": "468745888b067d9b72e96a9852129fa9581a5fd0f4c1e65ae9162d54d76c9945"
+          },
+          {
+            "path": "project/checkin.md",
+            "sha256": "21ac651fa1d63075eeaebecd76bbcf730d0ba105ab8f7a57864f75ed5c7890a4"
+          },
+          {
+            "path": "openspec/changes/sync-android-checkin-ios/implementation.md",
+            "sha256": "d61fab1145fd2a191a48538fa6fb689e6d764e61cdc702656170a9e72e26ff05"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-native-platform-consistency",
+    "archiveDate": "2026-06-25",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "996ae0e0981316668ef0440343e8ea09d2806df46364576657de70bfd91d4733",
+    "sources": [
+      {
+        "repo": "pic-agent-ios",
+        "commit": "1710e0d57a53c2c461231a9e1cfe57fa53634a0e",
+        "authoredAt": "2026-06-25T00:21:33+08:00",
+        "files": [
+          {
+            "path": "Sources/DomainCenterProtocol/CheckinProviding.swift",
+            "sha256": "effa38f6988a876df8b47f09d7e412b45a38dee339dd0c9a057972dda05ab19c"
+          },
+          {
+            "path": "Sources/FeatureHome/Checkin/CheckinRootViewModel.swift",
+            "sha256": "468745888b067d9b72e96a9852129fa9581a5fd0f4c1e65ae9162d54d76c9945"
+          },
+          {
+            "path": "project/checkin.md",
+            "sha256": "21ac651fa1d63075eeaebecd76bbcf730d0ba105ab8f7a57864f75ed5c7890a4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-spring-durable-media-tasks",
+    "archiveDate": "2026-07-17",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "e82a8d308bdbfe55ad0ead54e58b290b2c40349ee9dbc900b72124211c5d9d6b",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "d8bdd7a2c1085be461e6416277673d0160e03aca",
+        "authoredAt": "2026-07-17T15:54:52+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationAcceptanceService.kt",
+            "sha256": "4c0cd71433dfeacb21955e702171fa341a8a26e3371f933cf851e0154c9bcbaa"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationWorkflowService.kt",
+            "sha256": "d0251b2b79ef958318c99f588387f9626843fdd2bcfdcd24a2273febd8c0efab"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationPublicationService.kt",
+            "sha256": "2fa6d9a3d395263f682db374b5c2ad402c60627cdc2421e56a7b1d65c2ea915d"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationProcessor.kt",
+            "sha256": "afca82180ac59232bb029d7d58789dab16d51ad7f2a31ab89d66fb5aa1df3645"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/resources/db/migration/V61__Create_async_media_generation.sql",
+            "sha256": "ae7e8f5fda29b3aab4a6bc6c09073a0a5259594eea216485456f01aed20d8d3a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-designing-for-unknown-results",
+    "archiveDate": "2026-07-17",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "5ac9917c3d0ce2794ad85cace6f6005a7ca138b8e27cb81a48c110f48dee30e8",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "d8bdd7a2c1085be461e6416277673d0160e03aca",
+        "authoredAt": "2026-07-17T15:54:52+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationAcceptanceService.kt",
+            "sha256": "4c0cd71433dfeacb21955e702171fa341a8a26e3371f933cf851e0154c9bcbaa"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationWorkflowService.kt",
+            "sha256": "d0251b2b79ef958318c99f588387f9626843fdd2bcfdcd24a2273febd8c0efab"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationPublicationService.kt",
+            "sha256": "2fa6d9a3d395263f682db374b5c2ad402c60627cdc2421e56a7b1d65c2ea915d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-mysql-limited-subquery",
+    "archiveDate": "2026-07-23",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "874dfb14fda1c331532712af1faedc835b56f3934af524bcf43359247adf2244",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "927703795a0389eede7180a292c8e3ed5b9de86e",
+        "authoredAt": "2026-07-23T09:47:44+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/mapper/chatacter/CharacterMessageMapper.kt",
+            "sha256": "9c8adc9f00cb1681149a68969330028c1596ece2957f67518cf6f3ad1b86c321"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-android-world-clock",
+    "archiveDate": "2026-08-06",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "3dfa30509875d8ef26d3c957e80d4ba2b6d39717d4d191fb7c5d6b6d9b963605",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "ec9e2adc297a3132515ae18af3c42412ca22b743",
+        "authoredAt": "2026-08-06T19:26:20+08:00",
+        "files": [
+          {
+            "path": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/clock/CharacterWorldClockCoordinator.kt",
+            "sha256": "9e49ac450576b840e4839eb3ac42d591c3ac009c8ab4d0c82f6cba717ac4bd59"
+          },
+          {
+            "path": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/clock/CharacterWorldClockContract.kt",
+            "sha256": "58edad7031c892bb669001be5c8ce5dd4e2500ebf2a8d8468fe5f773ecbfe989"
+          },
+          {
+            "path": "openspec/changes/p1-character-world-server-synced-clock-android/implementation.md",
+            "sha256": "dfa929cdf5219bc54d8b30b483203b1eb4bf302fa981b12722937687ba917084"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-media-direct-upload",
+    "archiveDate": "2026-09-07",
+    "compiledOn": "2026-09-21",
+    "markdownSha256": "59938504a594bc2627d2e023df7e650997e16d0d99653755fff66b3c084d9414",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "09d331427653342674f841f8c9ece5d1e43c90dc",
+        "authoredAt": "2026-09-07T15:28:24+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/upload/ClientUploadService.kt",
+            "sha256": "5dbd1c857635182bfe095b8d088dc99648a21d49ce7fc03bfcfa66eb86e8b447"
+          },
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/upload/ClientUploadBindingService.kt",
+            "sha256": "cf9d243a03bab2c440ba3e59ca04bafc9aa588e94568290d0ce2b42b72368575"
+          },
+          {
+            "path": "project/client_media_upload.md",
+            "sha256": "902e3e20f0c6c4f1cefcb11eb289b2f2809a534366596179f035e0c4123316e3"
+          }
+        ]
+      },
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "9f64ab88a043f562de2e842e98ade7d07a6c1b55",
+        "authoredAt": "2026-09-07T15:26:38+08:00",
+        "files": [
+          {
+            "path": "shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/upload/KmpDirectUploadRepository.kt",
+            "sha256": "cf75dff43c3f07987e48626796a60efee61588590e5c50cbeb966e37661e2947"
+          }
+        ]
+      }
+    ]
+  }
+]

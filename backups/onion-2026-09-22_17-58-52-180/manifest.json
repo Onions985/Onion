@@ -1,0 +1,85 @@
+{
+  "completed": true,
+  "createdAt": "2026-09-22T09:58:52.180Z",
+  "timezone": "Asia/Shanghai",
+  "database": {
+    "name": "onion",
+    "port": 3317,
+    "version": "8.0.46"
+  },
+  "consistency": "mysqldump --single-transaction (InnoDB)",
+  "tables": [
+    "auth_attempts",
+    "comment_attempts",
+    "comments",
+    "content_items",
+    "content_pins",
+    "content_revisions",
+    "content_translations",
+    "media_assets",
+    "preferences",
+    "revision_media",
+    "schema_migrations",
+    "sessions",
+    "site_profiles",
+    "site_settings",
+    "ui_messages",
+    "users"
+  ],
+  "contentCountsAfterExport": [
+    {
+      "kind": "blog",
+      "count": 68
+    },
+    {
+      "kind": "life",
+      "count": 2
+    },
+    {
+      "kind": "project",
+      "count": 6
+    }
+  ],
+  "sql": {
+    "path": "database.sql",
+    "bytes": 787055,
+    "sha256": "d95b757e7eb5c05c4b62ca71a689a7e5ff5c8e6ab1cf22ee3bf17a3491383b78"
+  },
+  "uploads": [
+    {
+      "path": "2026-09/0fc607c2-0794-49f4-81b2-324c1dbeeefc.png",
+      "bytes": 1878369,
+      "sha256": "b8d5f46fc97b132772769a0925b172e4f4144763bf5531f7be97138a05d4ebc4"
+    },
+    {
+      "path": "2026-09/2eddd804-324f-45f3-a219-ff9f4c05c8ab.png",
+      "bytes": 67,
+      "sha256": "b95a28b208d434a182a5c2281e552f1f9021d209a8b4f8abce4f308c57a9c5cc"
+    },
+    {
+      "path": "2026-09/5654b08f-ec7e-4dbe-94c6-5b1b684f2dc7.jpg",
+      "bytes": 468986,
+      "sha256": "30ae73c67913d2f4ca96dd229f730508ef6085c3cf8b38f4f3179e36b3642949"
+    },
+    {
+      "path": "2026-09/b4ddffeb-60b2-444e-bd70-9e45be5a9fce.png",
+      "bytes": 2134077,
+      "sha256": "7e7385a49de7e23d08cfddb8aa1c0ab8cc90fb0fea92e3013e2f4e63e73ad320"
+    },
+    {
+      "path": "2026-09/d1af5085-2e37-4d0f-b31b-0c5d4d873d97.png",
+      "bytes": 1627832,
+      "sha256": "5d6c3f8ad86859a3f64b02cc1726537dd65addb1db7d503b24c31fb44c1bc9bb"
+    },
+    {
+      "path": "2026-09/fdb0221a-ce91-485d-8c4f-f59b025930ba.png",
+      "bytes": 1658514,
+      "sha256": "f2a52062be4b36e6126099843961b256edfd0566113f11d95c3e9f1a713d6ef3"
+    },
+    {
+      "path": "site/onion-avatar-20260922.png",
+      "bytes": 2152131,
+      "sha256": "05ff1d4f9f26043ecd7198df8998070d229fe6cfb07d5b965524f331c7d34044"
+    }
+  ]
+}

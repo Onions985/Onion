@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "picagent-harmony-shared-navigation",
+    "file": "harmony-shared-navigation.md",
+    "title": "鸿蒙跨模块导航：把路由、参数和页面职责分开",
+    "summary": "回看 PicAgent 鸿蒙端的一次路由打通：RouterManager、共享 RouterModel 和角色选择页如何协作，以及类型断言和未接通分支的边界。",
+    "category": "移动开发",
+    "tags": ["鸿蒙", "HarmonyOS", "ArkTS", "ArkUI", "架构"],
+    "sources": [{"repo": "pic-agent-harmony", "commit": "4091ef1", "files": ["RouterManager/src/main/ets/RouterConstant.ets", "model/src/main/ets/RouterModel.ets", "character/src/main/ets/pages/select/CharacterSelectedPage.ets"]}]
+  },
+  {
+    "slug": "picagent-kmp-token-refresh",
+    "file": "kmp-token-refresh.md",
+    "title": "KMP 的 401 恢复：一次重试与清晰的依赖方向",
+    "summary": "从实际 HttpSend 拦截器拆解认证恢复：业务请求最多重试一次，刷新请求避免递归，网络层通过接口交给平台管理令牌。",
+    "category": "跨端开发",
+    "tags": ["KMP", "Kotlin", "Ktor", "网络"],
+    "sources": [{"repo": "pic-agent-kmp", "commit": "be0ad66", "files": ["shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/network/NetworkAuthRefreshHandler.kt", "shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/network/PicAgentHttpClientPlugins.kt", "shared-login/src/commonMain/kotlin/com/onion/picagent/kmp/login/data/LoginRepository.kt"]}]
+  },
+  {
+    "slug": "picagent-android-chat-scroll",
+    "file": "android-chat-scroll.md",
+    "title": "聊天页为什么突然回到底部：一次 Compose 滚动修复",
+    "summary": "用 UserChat 的真实 diff 分析过期可见性状态、收到新消息和键盘跟随，把自动滚动限定到明确的用户动作。",
+    "category": "移动开发",
+    "tags": ["Android", "Jetpack Compose", "Kotlin", "交互设计"],
+    "sources": [{"repo": "pic-agent-android", "commit": "c3c2dca0", "files": ["feature/home/src/main/java/com/onion/picagent/home/engine/message/UserChatRoute.kt", "openspec/changes/p0-user-chat-preserve-scroll/implementation.md"]}]
+  },
+  {
+    "slug": "picagent-ios-checkin-state",
+    "file": "ios-checkin-state.md",
+    "title": "SwiftUI 签到页：服务端规则、页面状态与余额刷新",
+    "summary": "从 CheckinProviding 与 ViewModel 的实际代码，梳理普通签到、补签、错误反馈和成功后的余额同步顺序。",
+    "category": "移动开发",
+    "tags": ["iOS", "Swift", "SwiftUI", "KMP", "状态管理"],
+    "sources": [{"repo": "pic-agent-ios", "commit": "1710e0d", "files": ["Sources/DomainCenterProtocol/CheckinProviding.swift", "Sources/FeatureHome/Checkin/CheckinRootViewModel.swift", "project/checkin.md", "openspec/changes/sync-android-checkin-ios/implementation.md"]}]
+  },
+  {
+    "slug": "picagent-native-platform-consistency",
+    "file": "native-platform-consistency.md",
+    "title": "多端一致，先对齐用户得到的承诺",
+    "summary": "从一次 iOS 签到接入出发，思考跨端一致性应该优先对齐哪些行为，以及共享代码和原生体验各自值得保留的边界。",
+    "category": "产品思考",
+    "tags": ["随想", "产品设计", "跨端", "架构"],
+    "sources": [{"repo": "pic-agent-ios", "commit": "1710e0d", "files": ["Sources/DomainCenterProtocol/CheckinProviding.swift", "Sources/FeatureHome/Checkin/CheckinRootViewModel.swift", "project/checkin.md"]}]
+  },
+  {
+    "slug": "picagent-spring-durable-media-tasks",
+    "file": "spring-durable-media-tasks.md",
+    "title": "Spring 异步媒体任务：幂等、事务、租约与 Outbox",
+    "summary": "回顾 PicAgent Java 服务中的真实媒体任务实现，区分受理、外部提交、轮询和业务发布，解释结果未知与迟到执行者如何影响状态设计。",
+    "category": "后端开发",
+    "tags": ["Java", "Spring", "SpringBoot", "Kotlin", "AI", "SQL", "异步任务"],
+    "sources": [{"repo": "pic-agent-java", "commit": "d8bdd7a", "files": ["agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationAcceptanceService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationWorkflowService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationPublicationService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationProcessor.kt", "agent-user/agent-user-service/src/main/resources/db/migration/V61__Create_async_media_generation.sql"]}]
+  },
+  {
+    "slug": "picagent-designing-for-unknown-results",
+    "file": "designing-for-unknown-results.md",
+    "title": "结果未知时，界面应该诚实地说什么",
+    "summary": "从异步生成的 SUBMITTING_UNKNOWN 状态出发，讨论重试身份、真实进度和持久结果，给无法立刻确定结果的产品留出表达空间。",
+    "category": "产品思考",
+    "tags": ["随想", "产品设计", "AI", "异步任务"],
+    "sources": [{"repo": "pic-agent-java", "commit": "d8bdd7a", "files": ["agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationAcceptanceService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationWorkflowService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/generation/MediaGenerationPublicationService.kt"]}]
+  },
+  {
+    "slug": "picagent-mysql-limited-subquery",
+    "file": "mysql-limited-subquery.md",
+    "title": "MySQL 的 IN 与 LIMIT 限制：一次会话列表查询修复",
+    "summary": "对照 CharacterMessageMapper 修改前后的真实 SQL，用派生表 JOIN 消除子查询限制，同时保留分组、限量和排序语义。",
+    "category": "数据库",
+    "tags": ["SQL", "MySQL", "Java", "MyBatis"],
+    "sources": [{"repo": "pic-agent-java", "commit": "92770379", "files": ["agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/mapper/chatacter/CharacterMessageMapper.kt"]}]
+  },
+  {
+    "slug": "picagent-android-world-clock",
+    "file": "android-world-clock.md",
+    "title": "24 倍速世界时钟：服务端锚点与 Android 单调时间",
+    "summary": "解析真实 ClockCoordinator 的锚点计算、整数溢出保护、页面会话归属与前后台切换，避免把设备时间当作世界时间。",
+    "category": "移动开发",
+    "tags": ["Android", "Kotlin", "KMP", "状态管理"],
+    "sources": [{"repo": "pic-agent-android", "commit": "ec9e2adc", "files": ["feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/clock/CharacterWorldClockCoordinator.kt", "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/clock/CharacterWorldClockContract.kt", "openspec/changes/p1-character-world-server-synced-clock-android/implementation.md"]}]
+  },
+  {
+    "slug": "picagent-media-direct-upload",
+    "file": "media-direct-upload.md",
+    "title": "媒体直传不止一个 URL：从上传身份到业务事务绑定",
+    "summary": "结合 Java 服务与 KMP 的真实实现，解释 prepare、匿名 PUT、complete 和 BOUND 四个阶段，以及业务失败为何不能消耗上传。",
+    "category": "后端开发",
+    "tags": ["Java", "Spring", "SpringBoot", "KMP", "SQL", "OSS", "文件上传"],
+    "sources": [{"repo": "pic-agent-java", "commit": "09d33142", "files": ["agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/upload/ClientUploadService.kt", "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/upload/ClientUploadBindingService.kt", "project/client_media_upload.md"]}, {"repo": "pic-agent-kmp", "commit": "9f64ab8", "files": ["shared-core/src/commonMain/kotlin/com/onion/picagent/kmp/core/upload/KmpDirectUploadRepository.kt"]}]
+  }
+]

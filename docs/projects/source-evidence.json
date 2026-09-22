@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "opc-devops",
+    "github": "https://github.com/opc-devops",
+    "publicRepositoriesVisible": false,
+    "verifiedOn": "2026-09-22",
+    "markdownSha256": "6f2875df339c16cc9d6debaabd7e460f9f35e214d09fb83be4e11fc348cde572",
+    "sources": [
+      {
+        "path": "D:/Users/Desktop/devops/devops-client/README.md",
+        "sha256": "7d1d55aeed93eed7112151ee50be24cff61603a0353d7dc74ad02ddcfd6bda26"
+      },
+      {
+        "path": "D:/Users/Desktop/devops/devops-client/frontend/package.json",
+        "sha256": "6e4ce83de7a92166b9c8bd864e90c146fa6a4e5ba1435cc1358b35f9a2f5cb1d"
+      },
+      {
+        "path": "D:/Users/Desktop/devops/.gitmodules",
+        "sha256": "cf844e68a1d683c32beb0849eb2ddd29c3855982f537091e957f6fb7d30d5e9a"
+      }
+    ]
+  },
+  {
+    "slug": "talking-rounds",
+    "github": "https://github.com/talking-rounds",
+    "publicRepositoriesVisible": false,
+    "verifiedOn": "2026-09-22",
+    "markdownSha256": "83575e8eca944b7febd85328cc46c395c904c188e57ff2f046e9a862494b864b",
+    "sources": [
+      {
+        "path": "D:/Users/Desktop/talking-rounds/README.md",
+        "sha256": "9f63a001ee172e16d103c6cffed71015dd174ad95ccafd759ad5a9fbaba229b0"
+      },
+      {
+        "path": "D:/Users/Desktop/talking-rounds/.gitmodules",
+        "sha256": "36d17ff7a9ebe3b1b750489dd62f31792ef6d98ffac7454d95aa3e81666661ad"
+      },
+      {
+        "path": "D:/Users/Desktop/talking-rounds/talking-rounds-web/package.json",
+        "sha256": "4ba80d7f9d3b27d7ef21cff6ae3f53c60297173e358f88fc31e894cc9bba0bbc"
+      }
+    ]
+  },
+  {
+    "slug": "tanxiaoer",
+    "github": "https://github.com/tanxiaoer",
+    "publicRepositoriesVisible": false,
+    "verifiedOn": "2026-09-22",
+    "markdownSha256": "cf8e02a3648fbae2ccd42537a2c9909d8a57768ba6718ae88ec7ccea2de0a4ae",
+    "sources": [
+      {
+        "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/app/data/site-content.ts",
+        "sha256": "03c2d5f269a7ffdeeab959fe96331111dcf096eb43d6991a54eca6a6282e1ac1"
+      },
+      {
+        "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/README.md",
+        "sha256": "7fa42ca248b89a88059109fc71e0dcb756031a8e63e8cc399ed6b162a0da57f3"
+      },
+      {
+        "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/package.json",
+        "sha256": "77fe0b230b2ae22c8a93e596dd94623c80fad0dd0fc5caed7b8b7b1e38e7f547"
+      },
+      {
+        "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-java/pom.xml",
+        "sha256": "b058d43ed58330cfc8910fa833ef6dd31c4f1bfe898046b90f993c902e764c73"
+      },
+      {
+        "path": "D:/Users/Desktop/tanxiaoer/.gitmodules",
+        "sha256": "d511a5870f644555729b7e5660a5972d67f7562ceb6ff9b6d24a68dea3e6b707"
+      }
+    ]
+  }
+]

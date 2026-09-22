@@ -1,0 +1,2 @@
+UPDATE ui_messages SET value='博客可分别保存和发布中英文；没有英文版本时显示中文原文。首次保存后可添加英文版本。' WHERE locale='zh' AND message_key='admin.translationHint' AND value='两种语言分别保存与发布；未发布的翻译不会显示在前台。';
+UPDATE ui_messages SET value='Blog translations are saved and published independently. Chinese is shown when English is unavailable. Save first to add a translation.' WHERE locale='en' AND message_key='admin.translationHint' AND value='Each language is saved and published independently. Unpublished translations remain private.';

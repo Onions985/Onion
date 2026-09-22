@@ -1,0 +1,261 @@
+[
+  {
+    "slug": "java-virtual-threads-resource-budget",
+    "archiveDate": "2024-01-18",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "16acfbd4169e0ed868479b190289991cc18ebbe53b315abac1f1aa66d1d5cc9e",
+    "sources": [
+      {
+        "title": "Oracle Java 21 Virtual Threads",
+        "url": "https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "java-completablefuture-deadlines",
+    "archiveDate": "2023-11-09",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "2aba714075656c548a9db49450f6dee488234a56f6e5e61b4f09b0c89d35c439",
+    "sources": [
+      {
+        "title": "Java 21 CompletableFuture API",
+        "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "spring-transaction-proxy-boundaries",
+    "archiveDate": "2023-10-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "a201f1b83743ef411bb3ea7629aef34bfbb8d281a117c4746c54bdcd5ddfe322",
+    "sources": [
+      {
+        "title": "Spring Transactional documentation",
+        "url": "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "transactional-outbox-delivery",
+    "archiveDate": "2025-05-16",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "f0cbae5f006d19089cda924b9587fd094ed7e92a17b7bba08526cf3663b9131e",
+    "sources": [
+      {
+        "title": "Debezium Outbox Event Router",
+        "url": "https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "mysql-composite-index-design",
+    "archiveDate": "2022-12-11",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "185c67a068bd3d8971647939be3ee3955ed268c94649699c749dd6beaddda5f6",
+    "sources": [
+      {
+        "title": "MySQL Multiple-Column Indexes",
+        "url": "https://dev.mysql.com/doc/refman/8.4/en/multiple-column-indexes.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "mysql-mvcc-snapshot-current-read",
+    "archiveDate": "2023-02-26",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "a6bffd67780b8fc23c129213a8c0c1747bfd3e5b787162dcadc2b88346fa0108",
+    "sources": [
+      {
+        "title": "MySQL Consistent Nonlocking Reads",
+        "url": "https://dev.mysql.com/doc/refman/8.4/en/innodb-consistent-read.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "mysql-keyset-pagination",
+    "archiveDate": "2023-06-18",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "4c4ec7738fc999d20fc420ce9413933909821c16f271d8723c8f141a09490855",
+    "sources": [
+      {
+        "title": "MySQL LIMIT Query Optimization",
+        "url": "https://dev.mysql.com/doc/refman/8.4/en/limit-optimization.html",
+        "verifiedOn": "2026-09-22"
+      },
+      {
+        "title": "MySQL Multiple-Column Indexes",
+        "url": "https://dev.mysql.com/doc/refman/8.4/en/multiple-column-indexes.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "redis-cache-consistency",
+    "archiveDate": "2024-03-12",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "cf8d27b2224670c4aaf0e851dd0ce5c8afd3302236680b05d9c39cc51be10d53",
+    "sources": [
+      {
+        "title": "Redis SET command",
+        "url": "https://redis.io/docs/latest/commands/set/",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "redis-lock-lease-fencing",
+    "archiveDate": "2024-05-25",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "a0c5b997f9ad9c65a4c88999606675851a7cec8a2c366f6a6fff6c3a7c79f71f",
+    "sources": [
+      {
+        "title": "Redis Distributed Locks",
+        "url": "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/",
+        "verifiedOn": "2026-09-22"
+      },
+      {
+        "title": "Redis SET command",
+        "url": "https://redis.io/docs/latest/commands/set/",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "http-cache-etag-design",
+    "archiveDate": "2022-09-24",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "0eebd901a5a1a669b797ccd7e00b31a7918d0971cc427504e3cf16408c179236",
+    "sources": [
+      {
+        "title": "RFC 9111 HTTP Caching",
+        "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "python-asyncio-taskgroup",
+    "archiveDate": "2024-07-14",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "fe7250c77f9b941c92f582c7c71e1e7fc5a0861d223125243ce6383e64882f5e",
+    "sources": [
+      {
+        "title": "Python 3.11 Coroutines and Tasks",
+        "url": "https://docs.python.org/3.11/library/asyncio-task.html",
+        "verifiedOn": "2026-09-22"
+      },
+      {
+        "title": "Python 3.11 Queues",
+        "url": "https://docs.python.org/3.11/library/asyncio-queue.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "python-streaming-data-pipelines",
+    "archiveDate": "2024-08-10",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "e05d678c19296c8593f97ec946ee9e3a19e2d63ec12563edfd76d5f3774d0e91",
+    "sources": [
+      {
+        "title": "Python Functional Programming HOWTO",
+        "url": "https://docs.python.org/3.11/howto/functional.html",
+        "verifiedOn": "2026-09-22"
+      },
+      {
+        "title": "Python 3.11 JSON documentation",
+        "url": "https://docs.python.org/3.11/library/json.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "typescript-discriminated-unions",
+    "archiveDate": "2024-09-22",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "b089dde02d220426ea838fcf3a1f09e45ac6b22d3d731fedccc6b3623c0572f8",
+    "sources": [
+      {
+        "title": "TypeScript Narrowing",
+        "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "css-content-visibility-long-pages",
+    "archiveDate": "2024-10-13",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "1faefd109c325a041a6f6328ac9cea7fb9d8d206499d9157c131a4999afa1cce",
+    "sources": [
+      {
+        "title": "MDN content-visibility",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "compose-stateflow-lifecycle",
+    "archiveDate": "2024-11-17",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "5acfdcab44221b30690e1ae8896ff8934b575f57981c0a2d9fa1fa3187789551",
+    "sources": [
+      {
+        "title": "Android State and Jetpack Compose",
+        "url": "https://developer.android.com/develop/ui/compose/state",
+        "verifiedOn": "2026-09-22"
+      },
+      {
+        "title": "Android StateFlow and SharedFlow",
+        "url": "https://developer.android.com/kotlin/flow/stateflow-and-sharedflow",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "swift-actor-reentrancy",
+    "archiveDate": "2025-01-12",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "b9774bc7bd80fd069ed390da4b10eb839e5e4902dc68493bcab034f7781dae39",
+    "sources": [
+      {
+        "title": "Swift SE-0306 Actors",
+        "url": "https://github.com/swiftlang/swift-evolution/blob/main/proposals/0306-actors.md",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "kmp-platform-boundaries",
+    "archiveDate": "2025-03-08",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "bcb8cc0d4083da228bcaf72c7a95b3256078ba1a08b63ea712f1405d9813d845",
+    "sources": [
+      {
+        "title": "Kotlin Expected and Actual Declarations",
+        "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-expect-actual.html",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  },
+  {
+    "slug": "rag-retrieval-evaluation",
+    "archiveDate": "2025-08-23",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "ff9c4ef410fc9116686dbd1949a1cd52dac68ce803294887517c100470e33f53",
+    "sources": [
+      {
+        "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+        "url": "https://arxiv.org/abs/2005.11401",
+        "verifiedOn": "2026-09-22"
+      }
+    ]
+  }
+]

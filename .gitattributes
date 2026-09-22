@@ -1,0 +1,2 @@
+# Preserve backup bytes so manifest SHA-256 checks survive cross-platform checkout.
+/backups/** -text

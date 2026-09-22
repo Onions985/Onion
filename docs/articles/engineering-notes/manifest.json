@@ -1,0 +1,405 @@
+{
+  "compiledOn": "2026-09-22",
+  "sourceType": "independent",
+  "articles": [
+    {
+      "slug": "java-virtual-threads-resource-budget",
+      "file": "java-virtual-threads-resource-budget.md",
+      "title": "虚拟线程之后，系统仍然需要资源预算",
+      "summary": "一个接口主要在等待数据库和 HTTP 响应时，传统线程池往往先碰到线程数量上限。Java 21 的虚拟线程提供了更轻的等待方式，但把线程池换掉以后，数据库连接、下游吞吐和请求内存仍然有上限。理解这些独立的预算，比记住一个创建线程的 API 更有价值。",
+      "category": "技术笔记",
+      "tags": [
+        "Java",
+        "并发",
+        "架构设计"
+      ],
+      "archiveDate": "2024-01-18",
+      "sources": [
+        {
+          "title": "Oracle Java 21 Virtual Threads",
+          "url": "https://docs.oracle.com/en/java/javase/21/core/virtual-threads.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "java-completablefuture-deadlines",
+      "file": "java-completablefuture-deadlines.md",
+      "title": "CompletableFuture 超时了，后台工作真的停了吗",
+      "summary": "`CompletableFuture` 很容易把多个调用拼起来，也很容易制造“接口已经超时，后台任务还在继续”的错觉。设计聚合接口时，我更关心三个时间：调用方何时停止等待、工作何时停止、资源何时释放。这三个时间往往并不相同。",
+      "category": "技术笔记",
+      "tags": [
+        "Java",
+        "并发",
+        "接口设计"
+      ],
+      "archiveDate": "2023-11-09",
+      "sources": [
+        {
+          "title": "Java 21 CompletableFuture API",
+          "url": "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "spring-transaction-proxy-boundaries",
+      "file": "spring-transaction-proxy-boundaries.md",
+      "title": "Spring 事务边界：从自调用到远程副作用",
+      "summary": "给方法加上 `@Transactional`，只是表达事务意图。代码真正执行时有没有经过事务拦截、异常有没有离开边界、数据库连接是否属于同一个事务，才决定数据是否一起提交。很多事务问题不是注解少了，而是边界画错了。",
+      "category": "技术笔记",
+      "tags": [
+        "Java",
+        "SpringBoot",
+        "数据库",
+        "架构设计"
+      ],
+      "archiveDate": "2023-10-21",
+      "sources": [
+        {
+          "title": "Spring Transactional documentation",
+          "url": "https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "transactional-outbox-delivery",
+      "file": "transactional-outbox-delivery.md",
+      "title": "Transactional Outbox：数据库提交之后，消息怎样可靠到达",
+      "summary": "订单写入数据库以后发送一条消息，看起来只有两步，却存在两种无法靠调整顺序消除的失败。先提交数据库，进程可能在发消息前退出；先发消息，数据库又可能回滚。Outbox 的思路是把“业务事实”和“待传播的事实”先存到同一数据库事务中。",
+      "category": "技术笔记",
+      "tags": [
+        "Java",
+        "SpringBoot",
+        "MySQL",
+        "分布式系统"
+      ],
+      "archiveDate": "2025-05-16",
+      "sources": [
+        {
+          "title": "Debezium Outbox Event Router",
+          "url": "https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "mysql-composite-index-design",
+      "file": "mysql-composite-index-design.md",
+      "title": "MySQL 联合索引：从查询形状推导字段顺序",
+      "summary": "联合索引不是把查询涉及的字段全部塞进去。它是一种有顺序的数据组织方式，需要同时考虑过滤、排序、返回字段和写入成本。设计索引前，我会先写出真实查询以及数据分布，再讨论字段顺序。",
+      "category": "技术笔记",
+      "tags": [
+        "MySQL",
+        "SQL",
+        "数据库",
+        "性能优化"
+      ],
+      "archiveDate": "2022-12-11",
+      "sources": [
+        {
+          "title": "MySQL Multiple-Column Indexes",
+          "url": "https://dev.mysql.com/doc/refman/8.4/en/multiple-column-indexes.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "mysql-mvcc-snapshot-current-read",
+      "file": "mysql-mvcc-snapshot-current-read.md",
+      "title": "MySQL MVCC：读到的快照与真正执行的更新",
+      "summary": "在一个事务里，两次普通查询看见相同的值，并不意味着后面的更新一定基于那个旧值。理解 InnoDB 的一致性读和锁定读，可以解释很多“明明读到有库存，扣减却失败”的现象，也能帮助设计正确的并发写入。",
+      "category": "技术笔记",
+      "tags": [
+        "MySQL",
+        "SQL",
+        "数据库",
+        "并发"
+      ],
+      "archiveDate": "2023-02-26",
+      "sources": [
+        {
+          "title": "MySQL Consistent Nonlocking Reads",
+          "url": "https://dev.mysql.com/doc/refman/8.4/en/innodb-consistent-read.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "mysql-keyset-pagination",
+      "file": "mysql-keyset-pagination.md",
+      "title": "游标分页怎么设计：稳定排序、过滤条件与数据变化",
+      "summary": "列表的第一页很快，翻到后面越来越慢，常见原因是偏移分页要求数据库先找到并跳过大量记录。游标分页把问题改成“从上一次看到的位置继续往后”，但要设计正确，必须先定义稳定顺序和数据变化时的产品语义。",
+      "category": "技术笔记",
+      "tags": [
+        "MySQL",
+        "SQL",
+        "分页",
+        "接口设计"
+      ],
+      "archiveDate": "2023-06-18",
+      "sources": [
+        {
+          "title": "MySQL LIMIT Query Optimization",
+          "url": "https://dev.mysql.com/doc/refman/8.4/en/limit-optimization.html",
+          "verifiedOn": "2026-09-22"
+        },
+        {
+          "title": "MySQL Multiple-Column Indexes",
+          "url": "https://dev.mysql.com/doc/refman/8.4/en/multiple-column-indexes.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "redis-cache-consistency",
+      "file": "redis-cache-consistency.md",
+      "title": "Redis 缓存一致性：从一次旧值回填说起",
+      "summary": "缓存旁路模式很常见：先查 Redis，未命中再查数据库，最后把结果放回缓存。真正麻烦的地方不是这三行代码，而是读写交错、过期策略和故障恢复。缓存是否允许短时间过时，应该在设计之初就说清楚。",
+      "category": "技术笔记",
+      "tags": [
+        "Redis",
+        "缓存",
+        "分布式系统",
+        "架构设计"
+      ],
+      "archiveDate": "2024-03-12",
+      "sources": [
+        {
+          "title": "Redis SET command",
+          "url": "https://redis.io/docs/latest/commands/set/",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "redis-lock-lease-fencing",
+      "file": "redis-lock-lease-fencing.md",
+      "title": "Redis 分布式锁：租约过期之后谁还有写入权",
+      "summary": "分布式锁最危险的误解，是把“我曾经拿到锁”理解为“我现在仍然拥有写入权”。进程暂停、网络延迟和租约过期都可能让旧执行者继续工作。锁的释放写对了，只解决了其中一部分问题。",
+      "category": "技术笔记",
+      "tags": [
+        "Redis",
+        "并发",
+        "分布式系统",
+        "SQL"
+      ],
+      "archiveDate": "2024-05-25",
+      "sources": [
+        {
+          "title": "Redis Distributed Locks",
+          "url": "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/",
+          "verifiedOn": "2026-09-22"
+        },
+        {
+          "title": "Redis SET command",
+          "url": "https://redis.io/docs/latest/commands/set/",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "http-cache-etag-design",
+      "file": "http-cache-etag-design.md",
+      "title": "HTTP 缓存设计：Cache-Control、ETag 与内容版本",
+      "summary": "浏览器缓存、CDN 和接口缓存经常被混成一个概念。设计 HTTP 缓存时，需要分别回答：谁可以保存响应、保存多久、什么时候必须询问服务器、询问后是否还需要传正文。`Cache-Control` 与验证器分别承担这些职责。",
+      "category": "技术笔记",
+      "tags": [
+        "HTTP",
+        "前端",
+        "缓存",
+        "接口设计"
+      ],
+      "archiveDate": "2022-09-24",
+      "sources": [
+        {
+          "title": "RFC 9111 HTTP Caching",
+          "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "python-asyncio-taskgroup",
+      "file": "python-asyncio-taskgroup.md",
+      "title": "Python TaskGroup：让并发任务有边界、有背压",
+      "summary": "并发脚本经常从 `create_task` 开始，却没有回答任务在哪里结束。主流程退出后还在运行的协程、被吞掉的取消异常、一次创建几十万个任务，都会让简单脚本变得难以预测。Python 3.11 的 TaskGroup 提供了更清楚的任务归属边界。",
+      "category": "技术笔记",
+      "tags": [
+        "Python",
+        "并发",
+        "架构设计"
+      ],
+      "archiveDate": "2024-07-14",
+      "sources": [
+        {
+          "title": "Python 3.11 Coroutines and Tasks",
+          "url": "https://docs.python.org/3.11/library/asyncio-task.html",
+          "verifiedOn": "2026-09-22"
+        },
+        {
+          "title": "Python 3.11 Queues",
+          "url": "https://docs.python.org/3.11/library/asyncio-queue.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "python-streaming-data-pipelines",
+      "file": "python-streaming-data-pipelines.md",
+      "title": "Python 流式数据处理：省内存之外，还要能恢复",
+      "summary": "处理几 GB 的日志时，第一步就 `read()` 再 `json.loads()` 往往把整份输入搬进内存。流式处理的价值不仅是节约内存，也在于明确每条记录在哪里校验、失败后从哪里恢复，以及输出什么时候才算完整。",
+      "category": "技术笔记",
+      "tags": [
+        "Python",
+        "数据处理",
+        "架构设计"
+      ],
+      "archiveDate": "2024-08-10",
+      "sources": [
+        {
+          "title": "Python Functional Programming HOWTO",
+          "url": "https://docs.python.org/3.11/howto/functional.html",
+          "verifiedOn": "2026-09-22"
+        },
+        {
+          "title": "Python 3.11 JSON documentation",
+          "url": "https://docs.python.org/3.11/library/json.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "typescript-discriminated-unions",
+      "file": "typescript-discriminated-unions.md",
+      "title": "用 TypeScript 判别联合把页面状态写清楚",
+      "summary": "一个页面同时拥有 `loading`、`error`、`data` 三个字段时，很容易出现彼此冲突的组合：正在加载却又显示旧错误，成功状态却没有数据。判别联合可以把业务允许的状态列出来，让编译器参与检查，而不是让每个组件自行猜测字段关系。",
+      "category": "技术笔记",
+      "tags": [
+        "TypeScript",
+        "前端",
+        "架构设计"
+      ],
+      "archiveDate": "2024-09-22",
+      "sources": [
+        {
+          "title": "TypeScript Narrowing",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "css-content-visibility-long-pages",
+      "file": "css-content-visibility-long-pages.md",
+      "title": "长页面性能优化：content-visibility 的作用与边界",
+      "summary": "长文章归档页可能只有几十张卡片，却包含复杂排版、代码高亮和图片。优化前需要知道成本发生在下载、脚本执行、布局还是绘制。`content-visibility` 能帮助浏览器跳过暂时不需要的离屏渲染工作，但不会让 DOM、数据和 JavaScript 自动消失。",
+      "category": "技术笔记",
+      "tags": [
+        "CSS",
+        "前端",
+        "性能优化",
+        "UI"
+      ],
+      "archiveDate": "2024-10-13",
+      "sources": [
+        {
+          "title": "MDN content-visibility",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "compose-stateflow-lifecycle",
+      "file": "compose-stateflow-lifecycle.md",
+      "title": "Compose 与 StateFlow：状态更新和生命周期要一起设计",
+      "summary": "Compose 页面“拿到了数据却不刷新”，经常不是重组机制神秘，而是状态没有通过可观察的方式变化。另一个常见问题是页面离开前台后仍在做不必要的收集。不可变 UI 状态、Flow 的共享策略和界面生命周期，需要放在一起设计。",
+      "category": "技术笔记",
+      "tags": [
+        "Android",
+        "Kotlin",
+        "Compose",
+        "架构设计"
+      ],
+      "archiveDate": "2024-11-17",
+      "sources": [
+        {
+          "title": "Android State and Jetpack Compose",
+          "url": "https://developer.android.com/develop/ui/compose/state",
+          "verifiedOn": "2026-09-22"
+        },
+        {
+          "title": "Android StateFlow and SharedFlow",
+          "url": "https://developer.android.com/kotlin/flow/stateflow-and-sharedflow",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "swift-actor-reentrancy",
+      "file": "swift-actor-reentrancy.md",
+      "title": "Swift Actor 可重入性：每个 await 都值得重新检查状态",
+      "summary": "Actor 可以隔离可变状态，却不会把一个包含 `await` 的方法变成不可打断的事务。方法挂起时，其他调用可能进入同一个 actor 修改状态；恢复后，挂起前成立的条件可能已经失效。这是写 Swift 并发代码时很值得单独检查的地方。",
+      "category": "技术笔记",
+      "tags": [
+        "iOS",
+        "Swift",
+        "并发",
+        "架构设计"
+      ],
+      "archiveDate": "2025-01-12",
+      "sources": [
+        {
+          "title": "Swift SE-0306 Actors",
+          "url": "https://github.com/swiftlang/swift-evolution/blob/main/proposals/0306-actors.md",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "kmp-platform-boundaries",
+      "file": "kmp-platform-boundaries.md",
+      "title": "KMP 共享边界：接口、expect/actual 与平台责任",
+      "summary": "跨平台共享最容易陷入两个极端：只共享几个数据类，收益有限；或者把文件、导航、权限和界面状态全部塞进公共模块，最后每个平台都充满条件分支。更稳妥的做法是按业务语义共享，把平台能力收敛成窄接口。",
+      "category": "技术笔记",
+      "tags": [
+        "KMP",
+        "Kotlin",
+        "Android",
+        "iOS",
+        "架构设计"
+      ],
+      "archiveDate": "2025-03-08",
+      "sources": [
+        {
+          "title": "Kotlin Expected and Actual Declarations",
+          "url": "https://kotlinlang.org/docs/multiplatform/multiplatform-expect-actual.html",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    },
+    {
+      "slug": "rag-retrieval-evaluation",
+      "file": "rag-retrieval-evaluation.md",
+      "title": "RAG 怎么评估：把检索、证据和回答分开看",
+      "summary": "RAG 演示通常从“把文档切块、转向量、检索后交给模型”开始。真正要让它可靠回答问题，需要知道失败发生在哪一层：资料根本不存在、检索没找到、上下文被截断，还是模型忽略证据。只看最终答案是否流畅，无法指导改进。",
+      "category": "技术笔记",
+      "tags": [
+        "AI",
+        "RAG",
+        "Python",
+        "架构设计"
+      ],
+      "archiveDate": "2025-08-23",
+      "sources": [
+        {
+          "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+          "url": "https://arxiv.org/abs/2005.11401",
+          "verifiedOn": "2026-09-22"
+        }
+      ]
+    }
+  ]
+}

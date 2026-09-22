@@ -1,0 +1,451 @@
+[
+  {
+    "slug": "opc-devops",
+    "reviewedAt": "2026-09-22T09:03:29.141Z",
+    "modules": [
+      {
+        "title": "工作区与项目 · 把一个产品的工程放在一起",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/workspace/scanner.go",
+            "sha256": "01906b372aa9d0f5bef88d98abdbca2e55c8a34822134ff4ca12c9f100f4724a"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/workspace/analysis.go",
+            "sha256": "e8e71f8c7a01f49a69e7e15c3424fa1576b14565028c06be9349207f676cbb06"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/WorkspaceManager.tsx",
+            "sha256": "7293c4e9339b20b863ab7b6f602eca819312eddd59f9cd44b6c02f5521aa333a"
+          }
+        ]
+      },
+      {
+        "title": "项目分析 · 理解模块与执行方式",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/ProjectWorkbench.tsx",
+            "sha256": "a9716d07aaa3fc1a77199978de0c187948c8492b07a25d6627a0c53c7f43642c"
+          }
+        ]
+      },
+      {
+        "title": "开发环境与 Docker · 管好项目需要的工具",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/DevelopmentEnvironment.tsx",
+            "sha256": "c718ad0e02aa21e59ae590dd0b7653259daef35dbf64fd3022e9d1a480be1dcc"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/dockerconsole/lifecycle.go",
+            "sha256": "34d222cc88e650e5e46cb7e02afb32cea1519a68966b1d949bc11996a56e15d9"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/dockerconsole/build.go",
+            "sha256": "08cc55029aa6aff73001b6666d26b5e4865bc7101d7f9600b22505d94b1d3a75"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/ProjectWorkbench.tsx",
+            "sha256": "a9716d07aaa3fc1a77199978de0c187948c8492b07a25d6627a0c53c7f43642c"
+          }
+        ]
+      },
+      {
+        "title": "Android 打包与设备 · 从构建到安装",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/AndroidConsole.tsx",
+            "sha256": "d8bf529154de01407b54f8117651e686c7aa37ffb2f4f3fa54dbbbfb5d291307"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/androidconsole/build_install.go",
+            "sha256": "faf3e458a0a07d60b44fd9110e2bfd4f7c07b2b6890ecb9b0fba88dba4173ac2"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/androidconsole/devices.go",
+            "sha256": "b6dc8dc2b7fe775ec39dc56013566aaab8f6d3a3cf595ba3c4b5dfa68de9ea63"
+          }
+        ]
+      },
+      {
+        "title": "构建与远程发布 · 连接本机和服务器",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/JavaRemoteRelease.tsx",
+            "sha256": "e74727fd88cf8700dd630b8262426d9f7a2d47e7a342196595b5508256e93510"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/serverconfig/connection.go",
+            "sha256": "744f2ef15a4f9f26a30f4a118de1a9651946eb20bf71010de2cd75a07c7f2efe"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/projectplan/remote_execution.go",
+            "sha256": "0f82f389fd1cdd6f7f4c3d603e5727af907b0c771c8820f4b1bb186d3609c155"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/projectplan/web_deployment.go",
+            "sha256": "d05e5fa3206e45e0a251d7456f80800904f9ed609bed4642b906ee4bac094968"
+          }
+        ]
+      },
+      {
+        "title": "Git 工作台 · 看清每个仓库的变化",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/WorkspaceGitPanel.tsx",
+            "sha256": "ca1d72871089f987de16f360a9c41e76ad304bd1aa68f417b240b65f62e1b9d0"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/gitmanager/service.go",
+            "sha256": "537724f85cd2c02b7cf86398666f60410841391770e3cbca76450f9f1e07c0f4"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/gitmanager/branch.go",
+            "sha256": "9914c9ff44a69136acc1563e4f1634dcca6a5cae5ff886ba87727ebe48db8378"
+          }
+        ]
+      },
+      {
+        "title": "数据库与 AI 查询 · 从结构走到问题",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/ProjectWorkbench.tsx",
+            "sha256": "a9716d07aaa3fc1a77199978de0c187948c8492b07a25d6627a0c53c7f43642c"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/databaseconfig/assistant.go",
+            "sha256": "79bcbfb5acc5c4a09a56941f39d51746dd15a512049cdfa965cd9b624bb62f52"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/databaseconfig/query_guard.go",
+            "sha256": "f00ada248da7341d84a182d6ae5c92a76c988d126a50b31e4bb01655b9da9cd4"
+          }
+        ]
+      },
+      {
+        "title": "Redis 工作台 · 看见缓存的具体内容",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/RedisWorkspace.tsx",
+            "sha256": "aa7eafd6e6e048b3c97ec15130544f7100a8c836ae51a6c56213a65724642f6c"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/redisconfig/keys.go",
+            "sha256": "20da1bb5c53bcbce5439725392b5106e9a17a8da669693d0e940ed61c6bb0819"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/redisconfig/mutate.lua",
+            "sha256": "3f094f270aae64026b45460cf17249b4846190f036e5ab3b2f221a2f2d893633"
+          }
+        ]
+      },
+      {
+        "title": "模型服务与用量 · 让 AI 调用有记录",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/ModelManager.tsx",
+            "sha256": "f681874f977d9a453c0c7d69b8bed3e7038d0b527a03f2a58a9ee251a67a68e9"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/internal/modelconfig/completion.go",
+            "sha256": "71e6c1722d9b967d2d35f9884308f43957eee5a6c9399238b58e981e65b16d40"
+          }
+        ]
+      },
+      {
+        "title": "项目 Skills · 管理可复用的开发方法",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/ProjectSkillsPanel.tsx",
+            "sha256": "60a59ab26954b6e049475f8478bc6823f1f7378a5a7d89080d4ad45edd09782f"
+          },
+          {
+            "path": "D:/Users/Desktop/devops/devops-client/frontend/src/SkillInstallPanel.tsx",
+            "sha256": "7a17b8a5dba9aa54ccc06051b8608c4b06bb354ae23f5474469c12630cea48fd"
+          }
+        ]
+      }
+    ],
+    "screenshots": {
+      "imported": 0,
+      "reason": "No verified application screenshots found in the project assets."
+    }
+  },
+  {
+    "slug": "talking-rounds",
+    "reviewedAt": "2026-09-22T09:03:29.150Z",
+    "modules": [
+      {
+        "title": "独立账号 · 用自己的身份加入讨论",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/httpapi/accounts.go",
+            "sha256": "e2a8b3a35265a7d89a6a40b67c282831b586f59d7025e9a54052d2fcc3f665b5"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/httpapi/server.go",
+            "sha256": "f3bbd574ba670f405cd42e23efa6358e21125ed139b236cbcc1f1efea75ad65d"
+          }
+        ]
+      },
+      {
+        "title": "朋友与关注 · 找到一起聊的人",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/room/social.go",
+            "sha256": "3d6ac9ec8c33a7958d52b30e91ef57f3b1c5d6c7b9460cbb50c9548541eb9a2a"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/agent/src/main/java/com/onion/talkingrounds/feature/agent/FriendsScreen.kt",
+            "sha256": "4ce61c9d4eba149ef51c4b4214d25fca6bd64745132629b4f3ee7c6174dbc3ca"
+          }
+        ]
+      },
+      {
+        "title": "主题房间 · 先确定聊什么、和谁聊",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/room/service.go",
+            "sha256": "377f097dcd66cb2895438f6af3be8e711fed9cc150dbd47c6dd35ca1ba3ed306"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/room/members.go",
+            "sha256": "0feb61ed0c2acc1d7194f2b41a2116b0ba41b0c6724ced6fffceabddd5f600ca"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/room/src/main/java/com/onion/talkingrounds/feature/room/RoomEntryScreen.kt",
+            "sha256": "e06c0cb85df1abfd0ce52007ad0dfc04217fdffd21496c454c3c725293dfff3c"
+          }
+        ]
+      },
+      {
+        "title": "AI 参与讨论 · 在合适的时候接话",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/agent/discussion.go",
+            "sha256": "56b87c1cb99bf1d5b008910cbf436c9f4e5c9093fbd1739baf625b56264d9f3c"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/agent/runtime.go",
+            "sha256": "488a582f7a5ae8282195ff9bd1f2afb5c1296ceb5db41f1665543edd8a40e187"
+          }
+        ]
+      },
+      {
+        "title": "实时会话 · 把交流接着聊下去",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/httpapi/websocket.go",
+            "sha256": "204e35750989ac14ab50db8bed0fdadfd9eba20a18fc1fa3190936479d58131a"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-go/internal/room/service.go",
+            "sha256": "377f097dcd66cb2895438f6af3be8e711fed9cc150dbd47c6dd35ca1ba3ed306"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/room/src/main/java/com/onion/talkingrounds/feature/room/ConversationViewModel.kt",
+            "sha256": "0a5beb6b018dbc4d40f74c3d0164f6244f1e23b37f0d9881fe0d3e34ea04f5ff"
+          }
+        ]
+      },
+      {
+        "title": "图片与语音 · 用更直接的方式表达",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/room/src/main/java/com/onion/talkingrounds/feature/room/ChatMediaControls.kt",
+            "sha256": "affa339e9d9aeaa7e19e4e4d40907fc0f373ddf9b568756526416c19f79fcad4"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/room/src/main/java/com/onion/talkingrounds/feature/room/ChatMediaBubble.kt",
+            "sha256": "6153ba9f0498f2947cf5945829ab150df07cf4ba3a08071bd0f49efd1083eda3"
+          },
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/room/src/main/java/com/onion/talkingrounds/feature/room/ChatVoicePlayback.kt",
+            "sha256": "491c8b8a58f6b14723702a75cb85e29a9b3e6c5ae182f51023e14a2ed52f599a"
+          }
+        ]
+      },
+      {
+        "title": "外观与个人设置 · 保持舒适的聊天环境",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/talking-rounds/talking-rounds-android/feature/agent/src/main/java/com/onion/talkingrounds/feature/agent/SettingsScreen.kt",
+            "sha256": "fb0999af9cda4b742281c5a4b7f9af4fedef62435da5e97f6ce4501e339de23e"
+          }
+        ]
+      }
+    ],
+    "screenshots": {
+      "imported": 0,
+      "reason": "Existing chat PNGs are design previews, not APK screenshots."
+    }
+  },
+  {
+    "slug": "tanxiaoer",
+    "reviewedAt": "2026-09-22T09:03:29.165Z",
+    "modules": [
+      {
+        "title": "店铺与商品 · 先把自己的货理清楚",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/product/src/main/java/com/onion/tanxiaoer/ui/product/ProductEditorScreen.kt",
+            "sha256": "5252aaa8b522d18656bedb96ab2a97d3d11916b601a4640d767cbff3c72a842c"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureMy/StoreCategoryInventoryViews.swift",
+            "sha256": "02f194d874708746c0d8bc315e88a1b95edfc8abef4af82c4d47d49ad9388e69"
+          }
+        ]
+      },
+      {
+        "title": "库存与仓库 · 知道货放在哪里",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureMy/StoreCategoryInventoryViews.swift",
+            "sha256": "02f194d874708746c0d8bc315e88a1b95edfc8abef4af82c4d47d49ad9388e69"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-java/tanxiaoer-merchant/tanxiaoer-merchant-service/src/main/kotlin/com/onion/tanxiaoer/merchant/controller/WarehouseCommandController.kt",
+            "sha256": "8337c40c33bc9254001e068074f72c61148dfdd20a5b87c4de39ce1a556184f4"
+          }
+        ]
+      },
+      {
+        "title": "出摊与收摊 · 记录每一场生意",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/my/src/main/java/com/onion/tanxiaoer/ui/my/StartStallScreen.kt",
+            "sha256": "a277541d3125b5334e3f34547d377396e53c321c92d2ae007d33c94661b255e9"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-java/tanxiaoer-merchant/tanxiaoer-merchant-service/src/main/kotlin/com/onion/tanxiaoer/merchant/controller/WarehouseCommandController.kt",
+            "sha256": "8337c40c33bc9254001e068074f72c61148dfdd20a5b87c4de39ce1a556184f4"
+          }
+        ]
+      },
+      {
+        "title": "开单与收款 · 金额清楚，再确认成交",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/product/src/main/java/com/onion/tanxiaoer/ui/product/ProductCheckoutScreen.kt",
+            "sha256": "4c02d138a74c719994f74080f2ec478586307876397b805cc9e35910ae1cc5fa"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureProduct/ProductCheckoutView.swift",
+            "sha256": "26e34921aa03e4d2b2da919a7c017c877bd1f8d56d1cc87c1201d38a39d7e7a1"
+          }
+        ]
+      },
+      {
+        "title": "优惠方案 · 算清每一笔让利",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/core/model/src/main/java/com/onion/tanxiaoer/core/model/ProductPromotionModels.kt",
+            "sha256": "cfa43879fa7fd811819fa6615968212de3a9437f3de3f282eb0df93fa3e0edbc"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErCoreModel/ProductPromotionModels.swift",
+            "sha256": "2b40c516fd13133cf86adbce286726d5aee37dce5efdfd8a48e4a08e9056849d"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureProduct/ProductCheckoutView.swift",
+            "sha256": "26e34921aa03e4d2b2da919a7c017c877bd1f8d56d1cc87c1201d38a39d7e7a1"
+          }
+        ]
+      },
+      {
+        "title": "赠品与整单赠送 · 送出的货也有记录",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/product/src/main/java/com/onion/tanxiaoer/ui/product/ProductCheckoutScreen.kt",
+            "sha256": "4c02d138a74c719994f74080f2ec478586307876397b805cc9e35910ae1cc5fa"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/core/model/src/main/java/com/onion/tanxiaoer/core/model/GiftModels.kt",
+            "sha256": "24cad16801824bbea2e96ea347ef273508e5fe68969543b44fe90e6fd2194681"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/core/model/src/main/java/com/onion/tanxiaoer/core/model/OrderModels.kt",
+            "sha256": "41a505486e371002e0cd63e0563c25fb135a042d286747c63aca7dc64bd9b07c"
+          }
+        ]
+      },
+      {
+        "title": "订单与经营统计 · 收摊后看懂结果",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/my/src/main/java/com/onion/tanxiaoer/ui/my/OrderStatisticsScreen.kt",
+            "sha256": "7c730ce7a8b223b54435ec3e277d15eb16ea03c7620d9bc6282e6fdcdf94946f"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/my/src/main/java/com/onion/tanxiaoer/ui/my/OrderDetailScreen.kt",
+            "sha256": "f09ad27c456fb440f79de40197b7b25ff7cefefe43c92b89711fed434e1be3f4"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/app/data/site-content.ts",
+            "sha256": "03c2d5f269a7ffdeeab959fe96331111dcf096eb43d6991a54eca6a6282e1ac1"
+          }
+        ]
+      },
+      {
+        "title": "扫码与商品标签 · 少找一步，少输一次",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/my/src/main/java/com/onion/tanxiaoer/ui/my/ProductLabelScreen.kt",
+            "sha256": "027f325582af29779873835a9dcd661258ac77844d1a17dfe1fb72d2f2152905"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureProduct/ProductScannerView.swift",
+            "sha256": "86236f3774608ee2f092a1138980941f72a965cde10dd47a78b3cc9dd1727356"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureProduct/ProductTicketView.swift",
+            "sha256": "4fff563d829178806ad2a2ab415828785921e192581877edf2d1b20f53808ffc"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/app/data/site-content.ts",
+            "sha256": "03c2d5f269a7ffdeeab959fe96331111dcf096eb43d6991a54eca6a6282e1ac1"
+          }
+        ]
+      },
+      {
+        "title": "本地与云端协作 · 按经营规模选择",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-android/feature/my/src/main/java/com/onion/tanxiaoer/ui/my/StaffManagementScreen.kt",
+            "sha256": "2ff3b886f4659b76aeec62e2bbf3841adee570003fd88f3f4ed59f5eaac4008f"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-java/tanxiaoer-merchant/tanxiaoer-merchant-service/src/main/kotlin/com/onion/tanxiaoer/merchant/controller/CloudPlanController.kt",
+            "sha256": "156be1d993d3301718c960a458f722cc04aff1bb8ef9c87de8f2e20cbad2b1f9"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/app/data/site-content.ts",
+            "sha256": "03c2d5f269a7ffdeeab959fe96331111dcf096eb43d6991a54eca6a6282e1ac1"
+          }
+        ]
+      },
+      {
+        "title": "完整皮肤 · 让日常工具更有温度",
+        "sources": [
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErCoreDesignSystem/SkinPack.swift",
+            "sha256": "b56406df214373ecc7fee10672e096911e290beda9731810717cc0e1369bf481"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-ios/Sources/TanXiaoErFeatureMy/PaymentDiscountSkinViews.swift",
+            "sha256": "5307a13a0a25eb635f7ee90cb2e68086c87823ead8b8522631071968b2e71493"
+          },
+          {
+            "path": "D:/Users/Desktop/tanxiaoer/tanxiaoer-web/app/data/site-content.ts",
+            "sha256": "03c2d5f269a7ffdeeab959fe96331111dcf096eb43d6991a54eca6a6282e1ac1"
+          }
+        ]
+      }
+    ],
+    "screenshots": {
+      "imported": 0,
+      "reason": "No verified application screenshots found in the project assets."
+    }
+  }
+]

@@ -1,0 +1,221 @@
+{
+  "inspectedAt": "2026-09-22T08:13:01.746Z",
+  "sources": [
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-android/feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldScreen.kt",
+      "sha256": "56c0100e245824c634c317f2e9cb90468f591341c924b3d10d8b6d9c9e9c2de1"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-android/feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldDesktopModel.kt",
+      "sha256": "abc7069f1b58c571e63041d1ab1c4b7891862cc8d3825999492eb36ae99fb31f"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-ios/Sources/FeatureCharacter/CharacterWorld/CharacterWorldRootView.swift",
+      "sha256": "5b37232b3239aa3059d9261b080c908fccd4bd4d09597ecad207ab87ab5df19c"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-harmony/characterworld/src/main/ets/pages/world/CharacterWorldPage.ets",
+      "sha256": "b71e484baa67537e16b153e21c54cf81fa7461a02571e036fba68d056ab29f07"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-kmp/shared-constant/src/commonMain/kotlin/com/onion/picagent/kmp/constant/CharacterWorldAppCode.kt",
+      "sha256": "15ebb9c614b33e39fb565f3f211667b60ac82b5c26ea1d786342679fb2426799"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterWorldController.kt",
+      "sha256": "0a319b93296a9cce9f35984da141b123d897ca466ca699c45b1ddc01d119aa43"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMessageController.kt",
+      "sha256": "6616fda9462a52a2f9a499e6a09e8e1c631bc3a447e65f1db644bae5761addc7"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterPersonalityController.kt",
+      "sha256": "2b12826e973c09e8800811d303313d3f761f302299aa30c5644bd9ba29c96eda"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMemoryController.kt",
+      "sha256": "a17d731120afb7894efe2c74417456597d1225ca016335be87b7f3345f11c4b6"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterStorylineController.kt",
+      "sha256": "9f0aaf1264e8613100b3799a0ca2273be95528d7d2f27fa01503d2ca360b3f2a"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/pom.xml",
+      "sha256": "b20c4fcbae4dee859f883b3c5fe6adcc0ad4b7b73c1a5ef1b401b836e71d2ebb"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterWorkshopController.kt",
+      "sha256": "7b1db41e2452e9e7df9b0def32bf5fdcc09760145d2ba950d60e2a47a7685646"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterAppController.kt",
+      "sha256": "6ff0e2ae2f6b61d521990849b876c2036b9d77f776d9ea4c53b15cca1229963d"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterLifecycleController.kt",
+      "sha256": "3a38dea99ee732be65ecc7efc619523b3988107d2bd01ecbc19b915e9ebcb260"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterController.kt",
+      "sha256": "54d91a4f4ac0c999388542181e4e4ec7e447984411ad0334d5fda05b3a0a2935"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterDiscoveryController.kt",
+      "sha256": "0f7ffedbb5b4e58b0477f06260cd78e0175548b00fffaddf1714ea07a82ed52a"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCollectionController.kt",
+      "sha256": "c57dfa7ccbe42b72dac645fd273f6348dff9774ed66fdba178ed5cb9e8310a0f"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterFollowController.kt",
+      "sha256": "9b453ca03ce468dc142d36bc73649519f246daec5b5781651e8d9032ed309677"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCharacterFollowController.kt",
+      "sha256": "c87baea33665eae2989b34fbd5e4aa7a952ed02d148b44aa4d8d6efc98510f2d"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCommentController.kt",
+      "sha256": "253e839a12fd504521a1ad96c922e153b9eb399e515981206f665fcc4357a93b"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterDiaryController.kt",
+      "sha256": "fe316e7ff5292fa41b787a885022de4be08cc45eb80a3f3481242cf43457af82"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterExpressionController.kt",
+      "sha256": "7e5f90db424cd0f248f5242b984036b6b825cae1b7d83038674e8e718aa71ef9"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterFmController.kt",
+      "sha256": "23606c0581a703c4730b2ecdbc07dc7523cf753d9c5652d91e7283888e1cbe04"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterArticleController.kt",
+      "sha256": "2e9e02097be30e813410540d5fe40dd0a3e2113acbf445644c4039233e8d0624"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMediaController.kt",
+      "sha256": "246adee01d93208f7b49ffbea7472d7ba74351321db462bbd2be13f592464969"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTimbreController.kt",
+      "sha256": "7d72db19e99a316524be3794d78433a0e39585ead3e3da09879d9fb99444a790"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTimbreGenerationController.kt",
+      "sha256": "647395bd137cc6144122148fc00ef4a09b8b0df1c8b7c50bf34273e6e6981194"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterStarController.kt",
+      "sha256": "12ee461f247e82020fe3cfb31c41b566f31c8b7b138ab47cf1bd3e21634436e2"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterGiftController.kt",
+      "sha256": "e702b7256b795818fde8e55b62b7df7f8a2d794ad0419a29f321b70db85a441a"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterRelationshipController.kt",
+      "sha256": "a769ced50ab93a489c918c4e118fb739b7a7d5dc912852b117af957e74077699"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterSettingController.kt",
+      "sha256": "5109ebe431c6990299ed05b9313691926b8341f1f3d42932c986c34b29572752"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterHotController.kt",
+      "sha256": "b49569def350434480bdce3bbf08cb8a214b8918eac7c4b78d85b6e4eccfe4db"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTagController.kt",
+      "sha256": "e026a3a593ec7a8d22d258d4654929a44beee394e272cfb584b1739eff7d4b71"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/moment/MomentController.kt",
+      "sha256": "bd5b2dbf33ecf39361c7cc288a6a412d24e48ea4dc93aefc9a8eedf2b5cc93ea"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/skill/SkillController.kt",
+      "sha256": "52ee55894a06e88f12baa09cc03591b22e90d24d5d78b229d0ab55ef59c1c289"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupRoomController.kt",
+      "sha256": "e749d53df88e4475a7d8ee461a6b5e95607ce51f48ce4afa9e785fab64d15fe2"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupInvitationController.kt",
+      "sha256": "32e5347be7f723b542b78bb42713554e7569c2f0653241c136e6acb1834039cb"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupMessageController.kt",
+      "sha256": "e115183bdee99d8b2429b1f3acdcb8812f42011a801b03a08a8859fb2d58dccc"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/MediaGenerationController.kt",
+      "sha256": "a5359931aa1c61eea9eccd2bef65bb6dff4757d244840c68c6a33a46185c0299"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserChatController.kt",
+      "sha256": "1c8cc10c90347345760a2ee8a99fca4a0c4bc6c253f653aca5e65f559680fbae"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserGenerationTaskController.kt",
+      "sha256": "df18d346db6e14aa9fcc5c1339ceb0ff1d16d81ce62b62a1cabd2d6093916411"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CharacterMarketController.kt",
+      "sha256": "3dd73060bc4d7277679673e24f03bdf06ea13256894f358ac7ae8bac80fa062d"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WorkController.kt",
+      "sha256": "328e73fc7d56ff5eea434412b287f5ad1a80fafe4a42895ad14d581044e779ed"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserController.kt",
+      "sha256": "945a1cbbf86529abcee08cbf16ea8e5c12d61b9bc2ad0ab7f65c37feb1c0408c"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserAuthController.kt",
+      "sha256": "a6371fe726ce2741a3b6a57a08315d0e57e2c851dc600270b2bf162a48a6cb3e"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserFollowController.kt",
+      "sha256": "f6df0c1c777fd6bd493b67b34c9ee4b40e67ea20782c23f7a216768a4fc40635"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WalletController.kt",
+      "sha256": "5a0c031038626461d5f7b55f022321fdd52badab4b1da6f10fb157b019577d45"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WalletRechargeController.kt",
+      "sha256": "5aa34f938115d5abed4118cca945590707ab25683a92a970b3e85009b890567d"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CheckinController.kt",
+      "sha256": "02fa871914d3d1703f74a030a95893eacd7be4fb8e4e1dd1c7802077663b0dca"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CustomerCenterController.kt",
+      "sha256": "c47370d49240dff66e471d61d917b4ca93720e82ab6287fa38a600474ddf2189"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/BrowseHistoryController.kt",
+      "sha256": "5e6025783597670a28d33355ad95fd354f457e39b24e67125d78e3fdb2b9180a"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/character/personality/CharacterPersonalityService.kt",
+      "sha256": "aad9ef9025697bb4064c2efdc698efd9fdac44ecbedf8ed2c0da5cebe16ab597"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/admin/AdminAiRuntimeConfigController.kt",
+      "sha256": "0e5724e9a1c924fd32b0d6ccf51dea8031105552b3b01e32d379f9a4b103fb12"
+    },
+    {
+      "path": "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/admin/AdminStorylineReviewController.kt",
+      "sha256": "1cb18f022c069b9125be5cc99baef0f760a88911ce46e4cede3a0754db7cd7c2"
+    }
+  ]
+}

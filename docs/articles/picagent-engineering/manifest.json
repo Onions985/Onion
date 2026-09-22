@@ -1,0 +1,447 @@
+{
+  "compiledOn": "2026-09-22",
+  "sourceType": "project",
+  "articles": [
+    {
+      "slug": "picagent-ai-cost-snapshot",
+      "file": "ai-cost-snapshot.md",
+      "title": "AI 成本调试：为什么一次估算必须绑定配置快照",
+      "summary": "AI 功能的成本页面如果只展示一个金额，很难解释这个数字从哪里来。模型选择、成本档位和价格资料都会变化。PicAgent 的 DebugAiCostService 把当前运行配置投影成一个只读快照，让一次估算具有可追溯的上下文。",
+      "category": "项目复盘",
+      "tags": [
+        "Java",
+        "SpringBoot",
+        "AI",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-java",
+          "commit": "44485d372b1dab973f56d1aef603201d778f9940",
+          "files": [
+            "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/debug/aicost/DebugAiCostService.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-video-processing-budget",
+      "file": "video-processing-budget.md",
+      "title": "视频压缩链路：把并发、截止时间与质量门禁放在一起",
+      "summary": "视频压缩并不是调用一次转码命令就完成了。生成文件需要下载、探测、转码、质量比较、上传和验证，任何一步失控都可能占满磁盘或拖住工作线程。PicAgent 的 GeneratedVideoProcessingService 把这些步骤放进同一预算与清理边界中。",
+      "category": "项目复盘",
+      "tags": [
+        "Java",
+        "SpringBoot",
+        "音视频",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-java",
+          "commit": "5f0ad078668c4332a4c098003201aa3a7785710f",
+          "files": [
+            "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/video/GeneratedVideoProcessingService.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-human-review-snapshot",
+      "file": "human-review-snapshot.md",
+      "title": "人工审核的交接边界：冻结候选内容，再等待裁决",
+      "summary": "AI 生成内容进入人工审核时，最重要的问题不是加一个待审核状态，而是审核者究竟在审哪一份内容。如果候选还在变化，批准按钮就可能放行一份从未被看过的结果。PicAgent 的人审提交服务通过冻结快照，把生成和正式发布之间的交接点固定下来。",
+      "category": "项目复盘",
+      "tags": [
+        "Java",
+        "SpringBoot",
+        "AI",
+        "需求设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-java",
+          "commit": "d709d1169eb70e2f5f4531fd03e63ad2ad86197f",
+          "files": [
+            "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/character/storyline/humanreview/StorylineHumanReviewSubmissionService.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-worker-claim-indexes",
+      "file": "worker-claim-indexes.md",
+      "title": "任务队列的两条索引：领取工作与回收租约",
+      "summary": "后台任务表通常有两类访问：找到等待执行的任务，以及找到运行中但租约已经过期的任务。两者过滤条件和排序目的不同，硬塞进一条索引，往往无法同时服务好。PicAgent 的 V105 迁移把这两条路径分别表达出来。",
+      "category": "项目复盘",
+      "tags": [
+        "MySQL",
+        "SQL",
+        "Java",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-java",
+          "commit": "ea031b297260c884734fdf71b2ab38efd4a248f5",
+          "files": [
+            "agent-user/agent-user-service/src/main/resources/db/migration/V105__Add_story_task_worker_claim_indexes.sql",
+            "agent-user/agent-user-service/src/main/resources/mapper/StoryTaskMapper.xml"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-immutable-subscription-offer",
+      "file": "immutable-subscription-offer.md",
+      "title": "订阅报价为什么要不可变：从 SQL 约束看交易设计",
+      "summary": "用户在确认页看到一个订阅价格，点击购买时后台配置可能已经变化。设计交易协议时，需要决定用户提交的是一个随时变化的商品，还是一个明确版本的报价。PicAgent 的 V97 迁移把报价版本、订单和分成分别建模，并用数据库约束限制不合法组合。",
+      "category": "项目复盘",
+      "tags": [
+        "MySQL",
+        "SQL",
+        "Java",
+        "需求设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-java",
+          "commit": "33fa54d13b7140c2eee3bf9fdeef350e3ba4f59a",
+          "files": [
+            "agent-user/agent-user-service/src/main/resources/db/migration/V97__Add_storyline_subscription_commerce.sql"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-validated-layout-cache",
+      "file": "validated-layout-cache.md",
+      "title": "最后一份有效布局：KMP 缓存为什么还要做语义校验",
+      "summary": "把接口响应存成 JSON，下一次打开时直接读出来，是缓存布局最容易想到的方案。但 JSON 可以成功反序列化，不代表布局仍然合法。PicAgent 的 KMP 布局缓存把“最后一份有效数据”作为边界，读写两端都检查业务语义。",
+      "category": "项目复盘",
+      "tags": [
+        "KMP",
+        "Kotlin",
+        "缓存",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-kmp",
+          "commit": "2c5e368568ef8d58391ea02741c44a2092a087df",
+          "files": [
+            "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/db/CharacterWorldAppLayoutCache.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-preview-flight-coordination",
+      "file": "preview-flight-coordination.md",
+      "title": "多个卡片一起刷新：KMP 预览请求的合并与账号清理",
+      "summary": "桌面上的多个卡片可能同时需要预览内容，页面重复进入也可能再次刷新。简单地给每张卡片发请求，会产生重复网络工作；简单地全局缓存一个请求，又会碰到账号切换后的旧结果回填。PicAgent 在 KMP 预览层同时处理了这两个边界。",
+      "category": "项目复盘",
+      "tags": [
+        "KMP",
+        "Kotlin",
+        "并发",
+        "缓存"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-kmp",
+          "commit": "689110266dd4a529edb4f80748186c501f537198",
+          "files": [
+            "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/preview/CharacterWorldAppPreviewProvider.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-server-owned-price-contract",
+      "file": "server-owned-price-contract.md",
+      "title": "价格不由客户端提交：KMP 购买协议的边界",
+      "summary": "购买协议如果让客户端直接提交金额，会把界面展示值和交易裁决混在一起。PicAgent 的 KMP App 商业模型采用另一种边界：客户端提交所选方案的身份，服务端返回实际成本、钱包与完整布局快照。",
+      "category": "项目复盘",
+      "tags": [
+        "KMP",
+        "Kotlin",
+        "接口设计",
+        "需求设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-kmp",
+          "commit": "87d30e6da8247bf1930570038d90db27eba89955",
+          "files": [
+            "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/model/world/CharacterWorldAppCommerceModels.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-composite-task-identity",
+      "file": "composite-task-identity.md",
+      "title": "统一任务列表之后，为什么 taskId 不再足够",
+      "summary": "把图片、视频、音色和角色世界任务放进同一个列表之后，一个看似简单的字段会暴露问题：不同任务命名空间里可能有相同的数字 ID。PicAgent 的 KMP 统一任务模型用复合身份明确区分它们，同时保留协议向前兼容空间。",
+      "category": "项目复盘",
+      "tags": [
+        "KMP",
+        "Kotlin",
+        "接口设计",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-kmp",
+          "commit": "8b2df63ff462aa4108fd4c3a5c1890fd44374264",
+          "files": [
+            "shared-home/src/commonMain/kotlin/com/onion/picagent/kmp/home/model/generationtask/GenerationTaskModels.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-atomic-refresh-owner",
+      "file": "atomic-refresh-owner.md",
+      "title": "账号切换的一瞬间：刷新事件怎样原子地核验归属",
+      "summary": "生成任务结束后，客户端通常需要刷新任务列表和音色列表。若事件属于旧账号，而用户刚刚切换账号，刷新就不应该继续被新会话接纳。PicAgent 的 GenerationRefreshBatchStore 用一个很小的临界区，把归属核验和事件提交连在一起。",
+      "category": "项目复盘",
+      "tags": [
+        "Android",
+        "Kotlin",
+        "并发",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-android",
+          "commit": "b613be7298741e152326527e81c16769465511ce",
+          "files": [
+            "domain/center/src/main/java/com/onion/picagent/center/datastore/GenerationRefreshBatchStore.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-desktop-action-authority",
+      "file": "desktop-action-authority.md",
+      "title": "卡片能显示，不代表现在能打开：Android 点击权限的复核",
+      "summary": "桌面卡片显示得快，通常依赖缓存与预览；点击入口是否可执行，却需要当前账号和最新业务状态。PicAgent 的 Android AppActionAuthority 把两件事分开，避免一个还留在屏幕上的旧卡片继续打开已经失效的功能。",
+      "category": "项目复盘",
+      "tags": [
+        "Android",
+        "Kotlin",
+        "需求设计",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-android",
+          "commit": "4043cd569cece11f58b611182d9d79a021feb5ca",
+          "files": [
+            "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldAppActionAuthority.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-memory-timeline-generations",
+      "file": "memory-timeline-generations.md",
+      "title": "列表、详情与账号：Android 时间线的三层请求代次",
+      "summary": "一个记忆时间线同时有账号、角色、分页列表和详情页。只保存一个 loading 标记，很难处理刷新与翻页交错、详情切换以及账号失效。PicAgent 的 Android MemoryViewModel 用多个代次表达不同范围的请求归属。",
+      "category": "项目复盘",
+      "tags": [
+        "Android",
+        "Kotlin",
+        "并发",
+        "分页"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-android",
+          "commit": "2598bcf823e83078335f2c3521a21dcc641d293b",
+          "files": [
+            "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/memory/CharacterWorldMemoryViewModel.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-terminal-push-validation",
+      "file": "terminal-push-validation.md",
+      "title": "收到推送就算成功吗：生成任务终态的组合校验",
+      "summary": "推送消息到达客户端，并不等于它能直接变成一张成功卡片。任务类型、操作类型、事件类型和任务状态之间需要互相一致。PicAgent 的 GenerationTaskTerminalValidator 把这项判断集中在 Center 边界，减少各个页面自行解释协议的差异。",
+      "category": "项目复盘",
+      "tags": [
+        "Android",
+        "Kotlin",
+        "接口设计",
+        "AI"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-android",
+          "commit": "abb6a7a4ab5e3f557d73ac5ea6d6f2a14314c342",
+          "files": [
+            "domain/center/src/main/java/com/onion/picagent/center/ui/push/GenerationTaskTerminalValidator.kt"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-swiftui-effective-appearance",
+      "file": "swiftui-effective-appearance.md",
+      "title": "SwiftUI 深浅主题：色板和系统外观必须成对传递",
+      "summary": "一个 App 使用自己的颜色表，又允许用户选择跟随系统、浅色或深色时，容易出现局部界面与系统控件外观不一致。PicAgent 的 AppThemeBox 把最终生效外观单独建模，并通过 SwiftUI Environment 与色板一起传递。",
+      "category": "项目复盘",
+      "tags": [
+        "iOS",
+        "Swift",
+        "UI",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-ios",
+          "commit": "4fe649e34eea51069237265286ffe223b6a65c4c",
+          "files": [
+            "Sources/Resource/Theme/AppThemeBox.swift"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-generation-coordinator-lifetime",
+      "file": "generation-coordinator-lifetime.md",
+      "title": "暂停查询不等于取消生成：iOS 异步任务的生命周期",
+      "summary": "AI 生成可能持续数十秒，用户会切后台、返回页面或选择稍后再看。若把页面消失直接理解为取消服务端任务，体验和实际执行就会脱节。PicAgent 的 iOS GenerationCoordinator 把提交、查询、暂停和脱离页面分成不同阶段。",
+      "category": "项目复盘",
+      "tags": [
+        "iOS",
+        "Swift",
+        "AI",
+        "并发"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-ios",
+          "commit": "bbdd51d574c87e3c7319c0ce68c7f7e6e1d3c4bf",
+          "files": [
+            "Sources/Base/Generation/PicAgentGenerationCoordinator.swift"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-follow-pagination-review",
+      "file": "follow-pagination-review.md",
+      "title": "从关注列表看分页设计：加载标记之外还缺什么",
+      "summary": "一个关注列表看起来只需要首次加载、加载更多和关注按钮，但这些动作会互相交错。PicAgent 这个历史版本的 FollowListPageViewModel 提供了一个很适合复盘的例子：基础分页状态清楚，同时也能看到加载标记尚未覆盖的竞态边界。",
+      "category": "项目复盘",
+      "tags": [
+        "iOS",
+        "Swift",
+        "分页",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-ios",
+          "commit": "dbf284d0cf8a6648d95b9b210bc1cc9c9ddcc8e2",
+          "files": [
+            "Sources/FeatureHome/Follow/FollowListPageViewModel.swift"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-jpeg-quality-boundary",
+      "file": "jpeg-quality-boundary.md",
+      "title": "保持尺寸的图片压缩：iOS JPEG 质量阶梯的取舍",
+      "summary": "上传图片超出大小限制时，可以降低编码质量，也可以缩小像素尺寸。两者影响不同，不应该隐藏在一个笼统的“压缩”按钮后面。PicAgent 的 iOS UploadImageCompressor 明确选择保持尺寸，用有限的 JPEG 质量阶梯寻找符合字节上限的结果。",
+      "category": "项目复盘",
+      "tags": [
+        "iOS",
+        "Swift",
+        "图片处理",
+        "需求设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-ios",
+          "commit": "13a331ba6405bb5431acf20301475ff6e3bbd48a",
+          "files": [
+            "Sources/Base/Image/PicAgentUploadImageCompressor.swift"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-session-invalidation-registry",
+      "file": "session-invalidation-registry.md",
+      "title": "鸿蒙退出登录：用失效注册表拆开认证与业务依赖",
+      "summary": "退出登录如果只删除 token，旧账号的内存状态、缓存观察者和迟到请求仍可能继续影响界面。另一方面，让认证模块直接依赖所有业务 Store，又容易形成循环依赖。PicAgent 鸿蒙端用一个小型失效注册表，把认证事件与具体业务清理分开。",
+      "category": "项目复盘",
+      "tags": [
+        "鸿蒙",
+        "ArkTS",
+        "架构设计",
+        "会话管理"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-harmony",
+          "commit": "94641d6822129663d7255e490b2128bd172a3258",
+          "files": [
+            "base/src/main/ets/auth/SessionInvalidationRegistry.ets"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-task-window-reducer",
+      "file": "task-window-reducer.md",
+      "title": "刷新头部、保留尾部：鸿蒙任务列表的窗口合并规则",
+      "summary": "任务列表既要不断更新最新状态，又要保留用户已经翻到的旧任务。每次刷新都替换全列表会让阅读位置丢失，简单把新旧数组拼起来又会重复。PicAgent 鸿蒙端把合并规则放进纯粹的 GenerationTaskWindowReducer，区分不同来源的数据。",
+      "category": "项目复盘",
+      "tags": [
+        "鸿蒙",
+        "ArkTS",
+        "分页",
+        "架构设计"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-harmony",
+          "commit": "94641d6822129663d7255e490b2128bd172a3258",
+          "files": [
+            "home/src/main/ets/pages/mine/generationtask/GenerationTaskWindowReducer.ets"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "picagent-upload-attempt-identity",
+      "file": "upload-attempt-identity.md",
+      "title": "上传成功后的 URL 能复用吗：鸿蒙编辑会话的精确身份",
+      "summary": "用户选图上传成功，但后续业务提交失败，再点一次提交时是否可以复用已经上传的 URL？如果复用条件只看文件数量，很容易把旧账号、旧目标或旧顺序的结果用到新内容上。PicAgent 鸿蒙端把上传尝试的完整归属显式保存下来。",
+      "category": "项目复盘",
+      "tags": [
+        "鸿蒙",
+        "ArkTS",
+        "图片处理",
+        "并发"
+      ],
+      "sources": [
+        {
+          "repo": "pic-agent-harmony",
+          "commit": "94641d6822129663d7255e490b2128bd172a3258",
+          "files": [
+            "base/src/main/ets/media/ClientImageUploadAttemptSession.ets"
+          ]
+        }
+      ]
+    }
+  ]
+}

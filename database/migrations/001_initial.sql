@@ -1,0 +1,56 @@
+CREATE TABLE IF NOT EXISTS users (
+ id CHAR(36) PRIMARY KEY, email VARCHAR(254) NOT NULL UNIQUE, password_hash VARCHAR(255) NOT NULL,
+ created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS sessions (
+ token_hash CHAR(64) PRIMARY KEY, user_id CHAR(36) NOT NULL, expires_at DATETIME NOT NULL,
+ INDEX(expires_at), FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS auth_attempts (
+ ip_hash CHAR(64) PRIMARY KEY, attempts INT NOT NULL DEFAULT 0, window_started DATETIME NOT NULL
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS site_settings (id INT PRIMARY KEY, config JSON NOT NULL) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS site_profiles (
+ locale VARCHAR(2) PRIMARY KEY, site_name VARCHAR(80) NOT NULL, display_name VARCHAR(80) NOT NULL,
+ headline VARCHAR(150) NOT NULL, description TEXT NOT NULL, motto VARCHAR(150) NOT NULL,
+ about_markdown MEDIUMTEXT NOT NULL, footer VARCHAR(200) NOT NULL, quote TEXT NOT NULL
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS ui_messages (
+ locale VARCHAR(2) NOT NULL, message_key VARCHAR(100) NOT NULL, value TEXT NOT NULL,
+ PRIMARY KEY(locale,message_key)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS preferences (
+ id CHAR(64) PRIMARY KEY, locale VARCHAR(2) NOT NULL, theme VARCHAR(10) NOT NULL,
+ updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS media_assets (
+ id CHAR(36) PRIMARY KEY, relative_path VARCHAR(200) NOT NULL UNIQUE, owner_id CHAR(36) NOT NULL,
+ original_name VARCHAR(255) NOT NULL, mime_type VARCHAR(60) NOT NULL, size INT NOT NULL,
+ width INT NOT NULL, height INT NOT NULL, sha256 CHAR(64) NOT NULL,
+ created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3), FOREIGN KEY(owner_id) REFERENCES users(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS content_items (
+ id CHAR(36) PRIMARY KEY, kind VARCHAR(12) NOT NULL, author_id CHAR(36) NOT NULL,
+ archived_at DATETIME(3) NULL, created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+ INDEX(kind,archived_at), FOREIGN KEY(author_id) REFERENCES users(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS content_translations (
+ id CHAR(36) PRIMARY KEY, content_id CHAR(36) NOT NULL, locale VARCHAR(2) NOT NULL,
+ published_slug VARCHAR(160) NULL, draft_revision_id CHAR(36) NULL, published_revision_id CHAR(36) NULL,
+ version INT NOT NULL DEFAULT 0, published_at DATETIME(3) NULL,
+ UNIQUE(content_id,locale), UNIQUE(locale,published_slug),
+ FOREIGN KEY(content_id) REFERENCES content_items(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS content_revisions (
+ id CHAR(36) PRIMARY KEY, translation_id CHAR(36) NOT NULL, slug VARCHAR(160) NOT NULL,
+ title VARCHAR(200) NOT NULL, summary VARCHAR(500) NOT NULL, markdown MEDIUMTEXT NOT NULL,
+ cover_id CHAR(36) NULL, metadata JSON NOT NULL, created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+ FOREIGN KEY(translation_id) REFERENCES content_translations(id) ON DELETE CASCADE,
+ FOREIGN KEY(cover_id) REFERENCES media_assets(id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS revision_media (
+ revision_id CHAR(36) NOT NULL, media_id CHAR(36) NOT NULL,
+ PRIMARY KEY(revision_id,media_id), FOREIGN KEY(revision_id) REFERENCES content_revisions(id) ON DELETE CASCADE,
+ FOREIGN KEY(media_id) REFERENCES media_assets(id)
+) ENGINE=InnoDB;

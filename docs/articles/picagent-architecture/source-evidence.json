@@ -1,0 +1,274 @@
+[
+  {
+    "slug": "picagent-topic-catalog-service",
+    "archiveDate": "2026-09-18",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "b9fde2c0415f52dbcf112e41671b645aa057f4919ea0df78742dcd9c1f3cb65d",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "4b0a19b350c3708686f4c7746efe740d35dd33c2",
+        "authoredAt": "2026-09-18T18:06:09+08:00",
+        "files": [
+          {
+            "path": "agent-gateway/src/main/kotlin/com/onion/picagent/gateway/config/TopicCatalogCredentialFilter.kt",
+            "sha256": "de7181b54234e6e5fc48beb5bb40c54f263905655793d4e79398c14d69e11a0a"
+          },
+          {
+            "path": "openspec/changes/extract-topic-catalog-query-service/design.md",
+            "sha256": "e70a59d360016b10f9fbccf7aaec895e24d2d8660ed2c1bad904bf2582e7b0cf"
+          },
+          {
+            "path": "openspec/changes/route-topic-catalog-through-gateway/design.md",
+            "sha256": "009fcadae214b27ac60dd6c561e09e329d63a20366ea91b9d8f51dcb0b8ea7c1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-realtime-boundary",
+    "archiveDate": "2026-09-07",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "67f7e0888a740cc96bfe3481e3e71e15caedfe0b1ab10a61aa4419fe1ebe32f7",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "d75295e9997b169a8a3f15bb7c90e6beec1f654a",
+        "authoredAt": "2026-09-07T09:51:20+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-realtime/src/main/kotlin/com/onion/picagent/realtime/RealtimePublisher.kt",
+            "sha256": "2fa15bf2019ba1d7ea0bb918934bdcdbc15864ca1332c35bdabba6f09364f3d2"
+          },
+          {
+            "path": "agent-user/agent-realtime/src/main/kotlin/com/onion/picagent/realtime/mqtt/MqttRealtimeSessionProvider.kt",
+            "sha256": "cd571d0ce38c2b87dae5087bd0ad9e83611a9dcd442ae5c410396b1f8b1f7e2d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-storage-module",
+    "archiveDate": "2026-09-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "541ddbdb56e524cd464c6fc27b2ee2a20daf8415b156ca2fa010720bf5c98931",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "5f0ad078668c4332a4c098003201aa3a7785710f",
+        "authoredAt": "2026-09-21T11:14:56+08:00",
+        "files": [
+          {
+            "path": "agent-foundation/agent-storage/src/main/kotlin/com/onion/picagent/storage/ObjectStorage.kt",
+            "sha256": "9d985c3c3f4965f857b934e173046eeaa3e16e62c7b34b8009df0c13205a548a"
+          },
+          {
+            "path": "project/storage.md",
+            "sha256": "38bf6317568dbab359b9512f17303817863c3f031649c003ae0e7ba6e098385a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-logging-correlation",
+    "archiveDate": "2026-09-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "8a00ed79a59c71eeda71fa5e0faf730e39d0ae09e6b56c709983254ae7a9193c",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "3d1d6e0025a96e85c551e05be4ca8d678b8456d5",
+        "authoredAt": "2026-09-21T17:38:42+08:00",
+        "files": [
+          {
+            "path": "agent-foundation/agent-logging/src/main/kotlin/com/onion/picagent/util/observability/TraceContextPolicy.kt",
+            "sha256": "e94c02aa6959a678b551eeb746804b50cbb4d6e2832a01fea1c3e041eb474ea6"
+          },
+          {
+            "path": "openspec/changes/unify-service-logging/design.md",
+            "sha256": "cb608951d0e9dd26c4d41c0844ea1f9c7d5ee7b26bfec0dea74d4431fa796cd4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-like-consistency",
+    "archiveDate": "2026-09-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "557b1164574cfcf75d8f8099803d2931581662b05960835bc35b57ea0d19a387",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "ccde258f0cd6e5a2caa21918512d719110c9dee9",
+        "authoredAt": "2026-09-21T18:29:19+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/like/LikePersistenceService.kt",
+            "sha256": "7e4428ccec6cc206c705dd3d0c796ba0659dc419c848c1d733c458bb156218ef"
+          },
+          {
+            "path": "openspec/changes/fix-work-like-consistency/design.md",
+            "sha256": "0fcb92070b94b6b67923e70fecfe9166f4bb65703b5736fffcc33ab2053152a8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-structured-output",
+    "archiveDate": "2026-09-04",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "1b322adb7215b377033e8ddd981671d7b6061401be8cfaf2bc5ff4eddd829b25",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "cdfb2e4224a9bceef65b51c0c0dbec6974573595",
+        "authoredAt": "2026-09-04T18:27:42+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/entity/model/ChatRequest.kt",
+            "sha256": "0121aa890e8a09c95c90ef9e9099f4566fa641669443c5d14a286144ae6596b6"
+          },
+          {
+            "path": "openspec/changes/upgrade-storyline-to-strict-structured-outputs/design.md",
+            "sha256": "b92d852fd6699cd89480d2681e4521ec527888b1a244cfbe41a52e27f3f0b6fe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-kmp-repository-boundaries",
+    "archiveDate": "2026-09-01",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "e9447f0a15aac8bc99f9cfcf26af302a7107be82022d5be42412a1dfac76309c",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "689110266dd4a529edb4f80748186c501f537198",
+        "authoredAt": "2026-09-01T17:30:22+08:00",
+        "files": [
+          {
+            "path": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/data/KmpCharacterWorldLayoutRepository.kt",
+            "sha256": "a65210080921e72792be0e5c51cd45ec6bae4746e9b9a592bf89dffd009cd55b"
+          },
+          {
+            "path": "openspec/changes/refactor-character-world-data-boundaries-kmp/design.md",
+            "sha256": "4bc1624244899365e4345b654ab3d997701783de4f1f6cc0f12f31943956f533"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-image-variants",
+    "archiveDate": "2026-08-21",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "61d7214061bf698bd23e89a2fed8e44316c994522cf7488af90fc9005df7ca1d",
+    "sources": [
+      {
+        "repo": "pic-agent-kmp",
+        "commit": "ba5aeffe2e9fedf5e4fd6494017566f7276c832b",
+        "authoredAt": "2026-08-21T19:09:28+08:00",
+        "files": [
+          {
+            "path": "shared-constant/src/commonMain/kotlin/com/onion/picagent/kmp/constant/ImageConstant.kt",
+            "sha256": "d9ca1bcb63b62f7511a5149c555fd0802b58740e0635e6cbd75351fb9925af00"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-local-topic-history",
+    "archiveDate": "2026-09-17",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "ef1b126c6c500c3eb95028ba55369a661629dc4ad9ef49538d9dea58f6c9c9e4",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "0dab201261adb84899f8c7d2dfc15bf48863c6ec",
+        "authoredAt": "2026-09-17T14:11:27+08:00",
+        "files": [
+          {
+            "path": "repository/db/src/main/java/com/onion/picagent/db/topic/TopicChatEntities.kt",
+            "sha256": "c46e6342aaeafc0ff68e444a39c44cf7193c8be72f57099e9513e5b6d0355846"
+          },
+          {
+            "path": "openspec/changes/20260916-topic-group-chat-android/design.md",
+            "sha256": "ce5e72cc4789d2fbb3e17472905ab76eb18ae1859b3ae48ff6c5c8939139bc64"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-confirmation-as-contract",
+    "archiveDate": "2026-08-31",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "f8fea22527b51e805092f60dbee96b7f841a73fc5d8d6d538ebf0ded7cf208af",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "7e9213cf0949bc04555b533dcc91a8972b6b1d54",
+        "authoredAt": "2026-08-31T19:22:16+08:00",
+        "files": [
+          {
+            "path": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/appmarket/CharacterWorldAppMarketViewModel.kt",
+            "sha256": "c3acc3d3533e4af730becac3c734a47155805a8620debe45012f557ba4437bb8"
+          },
+          {
+            "path": "openspec/changes/p0-storyline-freeze-confirmation-android/design.md",
+            "sha256": "c7b099d8c5181f2df3a43c890dc41679e8297b55f6ab12668328991fdc6cdb7d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-first-use-introduction",
+    "archiveDate": "2026-08-28",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "fa321877920b6396883ed0e4c50c1c88e75122266f1b331da57dfa1545acb153",
+    "sources": [
+      {
+        "repo": "pic-agent-android",
+        "commit": "40fb00067a2b2428a78830d4bc7a8f8a7b68d5b1",
+        "authoredAt": "2026-08-28T14:35:14+08:00",
+        "files": [
+          {
+            "path": "feature/home/src/main/java/com/onion/picagent/home/engine/my/MyAiTwinIntroSheet.kt",
+            "sha256": "0cc0bfc4ffdbee11de3c8120ba4d916fc9418767fb1622fdcd1e083ec64623d1"
+          },
+          {
+            "path": "feature/home/src/main/java/com/onion/picagent/home/engine/my/MyViewModel.kt",
+            "sha256": "6b025f049dbb01fa3c0f39637b64adf1dd87c125b608b68bee8c13eb5c7cca9c"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "picagent-layout-versus-identity",
+    "archiveDate": "2026-09-04",
+    "compiledOn": "2026-09-22",
+    "markdownSha256": "df8df1731682ff0b6631aa0c7d80fdbce39472e3984de0358fb9bffa80fb6587",
+    "sources": [
+      {
+        "repo": "pic-agent-java",
+        "commit": "96ccad0597ef74f6a02fa611c33aef2be68fb793",
+        "authoredAt": "2026-09-04T19:00:57+08:00",
+        "files": [
+          {
+            "path": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/entity/character/app/CharacterAppInstallLayoutPolicy.kt",
+            "sha256": "56aae858b5f38274d8933ef27ccd28431c9e82a1706470a9306325cd39a2e339"
+          }
+        ]
+      }
+    ]
+  }
+]

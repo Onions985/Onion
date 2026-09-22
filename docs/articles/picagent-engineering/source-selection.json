@@ -1,0 +1,162 @@
+[
+  {
+    "key": "java-cost",
+    "repo": "pic-agent-java",
+    "file": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/debug/aicost/DebugAiCostService.kt",
+    "commit": "44485d372b1dab973f56d1aef603201d778f9940",
+    "date": "2026-08-25T19:23:09+08:00",
+    "lines": 53
+  },
+  {
+    "key": "java-video",
+    "repo": "pic-agent-java",
+    "file": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/media/video/GeneratedVideoProcessingService.kt",
+    "commit": "5f0ad078668c4332a4c098003201aa3a7785710f",
+    "date": "2026-09-21T11:14:56+08:00",
+    "lines": 195
+  },
+  {
+    "key": "java-review",
+    "repo": "pic-agent-java",
+    "file": "agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/character/storyline/humanreview/StorylineHumanReviewSubmissionService.kt",
+    "commit": "d709d1169eb70e2f5f4531fd03e63ad2ad86197f",
+    "date": "2026-09-03T22:18:25+08:00",
+    "lines": 130
+  },
+  {
+    "key": "java-claim",
+    "repo": "pic-agent-java",
+    "file": "agent-user/agent-user-service/src/main/resources/db/migration/V105__Add_story_task_worker_claim_indexes.sql",
+    "commit": "ea031b297260c884734fdf71b2ab38efd4a248f5",
+    "date": "2026-08-10T13:57:18+08:00",
+    "lines": 4
+  },
+  {
+    "key": "java-subscription",
+    "repo": "pic-agent-java",
+    "file": "agent-user/agent-user-service/src/main/resources/db/migration/V97__Add_storyline_subscription_commerce.sql",
+    "commit": "33fa54d13b7140c2eee3bf9fdeef350e3ba4f59a",
+    "date": "2026-08-05T19:23:59+08:00",
+    "lines": 126
+  },
+  {
+    "key": "kmp-layout-cache",
+    "repo": "pic-agent-kmp",
+    "file": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/db/CharacterWorldAppLayoutCache.kt",
+    "commit": "2c5e368568ef8d58391ea02741c44a2092a087df",
+    "date": "2026-08-14T15:16:53+08:00",
+    "lines": 313
+  },
+  {
+    "key": "kmp-preview",
+    "repo": "pic-agent-kmp",
+    "file": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/preview/CharacterWorldAppPreviewProvider.kt",
+    "commit": "689110266dd4a529edb4f80748186c501f537198",
+    "date": "2026-09-01T17:30:22+08:00",
+    "lines": 666
+  },
+  {
+    "key": "kmp-wire",
+    "repo": "pic-agent-kmp",
+    "file": "shared-character/src/commonMain/kotlin/com/onion/picagent/kmp/character/model/world/CharacterWorldAppCommerceModels.kt",
+    "commit": "87d30e6da8247bf1930570038d90db27eba89955",
+    "date": "2026-08-10T14:06:15+08:00",
+    "lines": 89
+  },
+  {
+    "key": "kmp-generation",
+    "repo": "pic-agent-kmp",
+    "file": "shared-home/src/commonMain/kotlin/com/onion/picagent/kmp/home/model/generationtask/GenerationTaskModels.kt",
+    "commit": "8b2df63ff462aa4108fd4c3a5c1890fd44374264",
+    "date": "2026-07-27T20:30:11+08:00",
+    "lines": 114
+  },
+  {
+    "key": "android-refresh",
+    "repo": "pic-agent-android",
+    "file": "domain/center/src/main/java/com/onion/picagent/center/datastore/GenerationRefreshBatchStore.kt",
+    "commit": "b613be7298741e152326527e81c16769465511ce",
+    "date": "2026-08-01T23:47:50+08:00",
+    "lines": 47
+  },
+  {
+    "key": "android-authority",
+    "repo": "pic-agent-android",
+    "file": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldAppActionAuthority.kt",
+    "commit": "4043cd569cece11f58b611182d9d79a021feb5ca",
+    "date": "2026-08-23T20:06:57+08:00",
+    "lines": 457
+  },
+  {
+    "key": "android-memory",
+    "repo": "pic-agent-android",
+    "file": "feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/memory/CharacterWorldMemoryViewModel.kt",
+    "commit": "2598bcf823e83078335f2c3521a21dcc641d293b",
+    "date": "2026-09-01T17:30:23+08:00",
+    "lines": 640
+  },
+  {
+    "key": "android-push",
+    "repo": "pic-agent-android",
+    "file": "domain/center/src/main/java/com/onion/picagent/center/ui/push/GenerationTaskTerminalValidator.kt",
+    "commit": "abb6a7a4ab5e3f557d73ac5ea6d6f2a14314c342",
+    "date": "2026-07-24T08:02:44+08:00",
+    "lines": 100
+  },
+  {
+    "key": "ios-theme",
+    "repo": "pic-agent-ios",
+    "file": "Sources/Resource/Theme/AppThemeBox.swift",
+    "commit": "4fe649e34eea51069237265286ffe223b6a65c4c",
+    "date": "2026-07-12T22:19:06+08:00",
+    "lines": 88
+  },
+  {
+    "key": "ios-generation",
+    "repo": "pic-agent-ios",
+    "file": "Sources/Base/Generation/PicAgentGenerationCoordinator.swift",
+    "commit": "bbdd51d574c87e3c7319c0ce68c7f7e6e1d3c4bf",
+    "date": "2026-07-21T21:53:02+08:00",
+    "lines": 411
+  },
+  {
+    "key": "ios-pagination",
+    "repo": "pic-agent-ios",
+    "file": "Sources/FeatureHome/Follow/FollowListPageViewModel.swift",
+    "commit": "dbf284d0cf8a6648d95b9b210bc1cc9c9ddcc8e2",
+    "date": "2026-07-28T08:17:00+08:00",
+    "lines": 167
+  },
+  {
+    "key": "ios-compression",
+    "repo": "pic-agent-ios",
+    "file": "Sources/Base/Image/PicAgentUploadImageCompressor.swift",
+    "commit": "13a331ba6405bb5431acf20301475ff6e3bbd48a",
+    "date": "2026-05-21T00:02:31+08:00",
+    "lines": 34
+  },
+  {
+    "key": "harmony-invalidation",
+    "repo": "pic-agent-harmony",
+    "file": "base/src/main/ets/auth/SessionInvalidationRegistry.ets",
+    "commit": "94641d6822129663d7255e490b2128bd172a3258",
+    "date": "2026-08-31T11:23:57+08:00",
+    "lines": 40
+  },
+  {
+    "key": "harmony-window",
+    "repo": "pic-agent-harmony",
+    "file": "home/src/main/ets/pages/mine/generationtask/GenerationTaskWindowReducer.ets",
+    "commit": "94641d6822129663d7255e490b2128bd172a3258",
+    "date": "2026-08-31T11:23:57+08:00",
+    "lines": 105
+  },
+  {
+    "key": "harmony-upload",
+    "repo": "pic-agent-harmony",
+    "file": "base/src/main/ets/media/ClientImageUploadAttemptSession.ets",
+    "commit": "94641d6822129663d7255e490b2128bd172a3258",
+    "date": "2026-08-31T11:23:57+08:00",
+    "lines": 123
+  }
+]

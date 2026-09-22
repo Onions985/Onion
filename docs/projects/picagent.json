@@ -1,0 +1,224 @@
+{
+  "slug": "picagent",
+  "title": "PicAgent · 智能体世界",
+  "summary": "创造拥有独立人格、声音与记忆的 AI 智能体，进入它们的世界，在对话、故事和社交中建立持续的连接。",
+  "metadata": {
+    "category": "智能体世界",
+    "tags": [
+      "AI",
+      "智能体",
+      "Android",
+      "iOS",
+      "鸿蒙",
+      "KMP"
+    ],
+    "projectUrl": "https://gitee.com/organizations/pic-agent/",
+    "repositoryUrl": "",
+    "projectStatus": "持续迭代",
+    "technologies": [
+      "Kotlin",
+      "Jetpack Compose",
+      "SwiftUI",
+      "ArkUI",
+      "KMP",
+      "Spring Boot",
+      "MySQL"
+    ],
+    "featured": true,
+    "flagship": true,
+    "projectModules": [
+      {
+        "title": "星工坊 · 用对话创建智能体",
+        "features": [
+          "对话式创作：通过文字、语音、开场提示和快捷动作，逐步描述角色的身份与设定，边交流边完善想法。",
+          "素材选择：从候选素材中选择形象，试听音色，确定角色最终的表达方式。",
+          "草稿保存：未完成的创建过程可以继续编辑，确认后再提交，不必一次填完所有信息。",
+          "角色管理：编辑资料、媒体和标签，提交公开审核，查看审核记录，也可以撤回申请或下架已发布的角色。"
+        ],
+        "description": "从一句想法开始，逐步塑造一个有身份、有形象、有声音的智能体。创建过程中的设定和选择会保存在草稿中，随时可以继续。"
+      },
+      {
+        "title": "智能体世界 · 每个角色的独立空间",
+        "features": [
+          "创建世界：为智能体生成独立空间，查看生成进度，并在失败后重新尝试。",
+          "世界桌面：通过场景背景、Dock 和分页应用区域探索角色空间，查看时间、天气与地点等世界信息。",
+          "自定义布局：创作者可以调整应用的位置和排列方式，访客进入后看到相同的世界布局。",
+          "内容入口：从桌面打开人格、相册、文章、FM、礼物、技能、记忆线和故事线，深入了解角色。"
+        ],
+        "description": "世界围绕一个具体智能体展开，把角色、内容和应用放进可进入、可探索的空间。"
+      },
+      {
+        "title": "对话与陪伴 · 让交流能够延续",
+        "features": [
+          "多种交流方式：发送文字与多模态消息，也可以向智能体推荐其他角色。",
+          "角色声音：通过角色音色呈现语音回复，让交流具有更鲜明的个性。",
+          "灵感回复：不知道如何接话时，可以从结合角色设定和最近对话生成的建议中选择。",
+          "继续上次的对话：查看最近会话、历史消息与已读位置，返回页面后继续交流，失败的回复也可以重试。",
+          "会话设置：调整与角色的聊天设置，按需清空自己的聊天记录。"
+        ],
+        "description": "围绕角色设定开展持续交流，并把生成状态、历史记录和再次进入会话的体验串联起来。"
+      },
+      {
+        "title": "人格与关系 · 角色有自己的性格",
+        "features": [
+          "基础资料：为角色填写年龄和生日，并查看关联的星座信息。",
+          "MBTI 人格：生成人格候选与相关星绘，选择适合角色的方案，也可以回看历史候选。",
+          "人格阅读：通过世界里的 MBTI 应用，了解角色已经开放的人格内容。",
+          "亲密度与奖励：查看互动带来的关系进度；官方智能体还提供等级轨道和对应的奖励解锁状态。"
+        ],
+        "description": "基础资料、MBTI 人格与互动关系，让角色拥有可以了解和感受的个性。"
+      },
+      {
+        "title": "记忆线与故事线 · 可以回看的世界",
+        "features": [
+          "记忆时间线：按时间浏览智能体当前保留的长期记忆，打开详情回看具体内容。",
+          "连续故事：通过章节和场景目录阅读故事正文，查看阅读前的人物资料。",
+          "接着阅读：记录上次主动进入的场景，返回时可以继续探索；预加载的内容不会被当作已经读过。",
+          "故事订阅：按应用授权和订阅范围进入故事，查看已经发布的场景。",
+          "官方日记：可查看日记条目与锁定状态，正文阅读暂未开放。"
+        ],
+        "description": "把长期记忆和连续叙事做成独立、可阅读的内容，让世界具有自己的时间维度。"
+      },
+      {
+        "title": "世界应用 · 安装、解锁与内容预览",
+        "features": [
+          "浏览应用：查看当前世界的应用清单、市场介绍、桌面预览和可开通的能力。",
+          "安装与整理：创作者可以为世界安装应用，并调整桌面布局。",
+          "解锁访问：访客可为相应应用开通永久访问，或订阅故事线内容。",
+          "查看权益：开通前了解报价，进入世界后区分已安装、已解锁和仍需开通的应用。"
+        ],
+        "description": "应用市场把世界里的能力组织起来，区分世界拥有者、普通访客以及不同的访问权益。"
+      },
+      {
+        "title": "相册、文章与 FM · 角色自己的内容",
+        "features": [
+          "世界相册：浏览角色相册；创作者可批量上传图片，并管理自己上传的照片。",
+          "角色文章：查看文章列表与正文，创作者可借助脚本提示组织角色的文字表达。",
+          "角色 FM：浏览和收听节目，创建节目内容并上传或更新音频。",
+          "媒体素材：管理角色使用的图片、音频与视频，为后续创作积累素材。"
+        ],
+        "description": "除了对话，智能体也有可以浏览、阅读和收听的内容空间。"
+      },
+      {
+        "title": "形象与声音创作 · 多模态生成",
+        "features": [
+          "图片与视频生成：通过文字或参考图片创作图像，使用文字生成视频，选择比例、模型与提示词。",
+          "音色创作：通过描述设计音色，或以音频素材发起复刻；管理自己的音色名称、资源与背景音乐。",
+          "角色表情：用预设短词创作表情，浏览角色表情和自己的表情资源。",
+          "星绘：创作和浏览角色衍生图像，查看关联的智能体、持有者与作品详情。",
+          "作品空间：浏览广场与热门作品，管理自己的创作，回看点赞过的内容。"
+        ],
+        "description": "图片、视频、音色、表情与星绘组成角色的表达素材，也保留独立的创作和作品管理入口。"
+      },
+      {
+        "title": "发现与社交 · 连接人和智能体",
+        "features": [
+          "发现角色：通过广场、类型、标签、搜索和热度排行寻找智能体，了解创作者与互动情况。",
+          "关注与收藏：关注喜欢的用户和智能体，收藏角色，查看关注列表与粉丝；角色之间也可以建立关注关系。",
+          "分享动态：发布自己的动态，或以自己创建的角色身份分享内容，浏览用户与角色的动态。",
+          "评论交流：在角色和动态下评论、回复与点赞；角色创作者可以置顶一条顶级评论。",
+          "朋友私聊：发送消息与智能体推荐卡片，查看历史会话、未读提醒和已读状态。"
+        ],
+        "description": "通过发现、关注、动态和私聊，让不同用户与智能体之间形成持续的联系。"
+      },
+      {
+        "title": "话题房间 · 一起参与一场讨论",
+        "features": [
+          "组织讨论：创建话题房间，查看详情，开始或结束讨论，也可以离开房间。",
+          "邀请朋友：从符合关注关系的候选中邀请参与者，查看邀请并接受或拒绝。",
+          "持续交流：发送消息、查看讨论轮次和聊天历史，网络恢复后继续读取会话。",
+          "参与范围：房间内容面向有访问权限的成员；退出或到期后，相应的参与权限随之结束。"
+        ],
+        "description": "和朋友、智能体围绕一个主题展开讨论，在共同的房间里分享观点、延续话题。"
+      },
+      {
+        "title": "礼物、技能与市场 · 拓展互动",
+        "features": [
+          "礼物表达：选择并送出礼物，浏览礼物墙、排行和自己的赠送记录。",
+          "角色技能：了解可学习的技能，查看已学技能，并按需要学习或移除。",
+          "市场展示：浏览商品和详情，管理自己的上架内容，支持更新或下架。",
+          "定价参考：查看智能体身价与星绘上架区间，为展示和定价提供参考。"
+        ],
+        "description": "围绕角色的成长和内容资产，提供礼物表达、技能管理和市场展示。"
+      },
+      {
+        "title": "账户、灵感值与任务中心",
+        "features": [
+          "个人账号：注册、使用密码或短信验证码登录，维护头像、昵称和简介，管理密码与登录状态。",
+          "灵感值与签到：查看余额、收支记录、消耗说明和价格，进行日常签到或周期内补签。",
+          "充值订单：查看充值档位、创建待支付订单并查询状态；支付到账功能尚未开放。",
+          "生成任务中心：离开原来的页面后，仍可集中查看图片、视频、音色等任务的进度和结果。",
+          "记录与帮助：管理浏览历史，搜索常见问题，提交文字或图片反馈并查看处理回复。"
+        ],
+        "description": "在个人中心管理资料、灵感值与生成任务，也可以回看浏览记录、寻找帮助。"
+      },
+      {
+        "title": "管理与审核 · 支撑长期运营",
+        "features": [
+          "发布审核：管理智能体与故事内容的审核，分别处理创作、审核通过和公开展示。",
+          "内容运营：维护角色内容、话题目录与运营配置，统一各客户端展示的数据。",
+          "后台管理：管理账号、角色权限、操作审计和 AI 运行配置。",
+          "多端产品：Android、iOS、鸿蒙和管理 Web 围绕同一套业务规则协作，KMP 复用模型与部分业务能力。"
+        ],
+        "description": "面向作者和运营的管理能力，与面向用户的 App 一起构成完整的产品。"
+      }
+    ],
+    "projectScreenshots": []
+  },
+  "sources": [
+    "D:/Users/Desktop/picagent/pic-agent-android/feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldScreen.kt",
+    "D:/Users/Desktop/picagent/pic-agent-android/feature/characterworld/src/main/java/com/onion/picagent/characterworld/engine/world/CharacterWorldDesktopModel.kt",
+    "D:/Users/Desktop/picagent/pic-agent-ios/Sources/FeatureCharacter/CharacterWorld/CharacterWorldRootView.swift",
+    "D:/Users/Desktop/picagent/pic-agent-harmony/characterworld/src/main/ets/pages/world/CharacterWorldPage.ets",
+    "D:/Users/Desktop/picagent/pic-agent-kmp/shared-constant/src/commonMain/kotlin/com/onion/picagent/kmp/constant/CharacterWorldAppCode.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterWorldController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMessageController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterPersonalityController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMemoryController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterStorylineController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/pom.xml",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterWorkshopController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterAppController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterLifecycleController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterDiscoveryController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCollectionController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterFollowController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCharacterFollowController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterCommentController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterDiaryController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterExpressionController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterFmController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterArticleController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterMediaController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTimbreController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTimbreGenerationController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterStarController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterGiftController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterRelationshipController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterSettingController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterHotController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/character/CharacterTagController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/moment/MomentController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/skill/SkillController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupRoomController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupInvitationController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/topicgroup/TopicGroupMessageController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/MediaGenerationController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserChatController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserGenerationTaskController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CharacterMarketController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WorkController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserAuthController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/UserFollowController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WalletController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/WalletRechargeController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CheckinController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/CustomerCenterController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/BrowseHistoryController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/service/character/personality/CharacterPersonalityService.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/admin/AdminAiRuntimeConfigController.kt",
+    "D:/Users/Desktop/picagent/pic-agent-java/agent-user/agent-user-service/src/main/kotlin/com/onion/picagent/controller/admin/AdminStorylineReviewController.kt"
+  ]
+}

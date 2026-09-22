@@ -1,0 +1,16 @@
+node_modules/
+.nuxt/
+.output/
+.data/
+.cache/
+.runtime/
+data/
+/backups/*
+!/backups/onion-2026-09-22_17-58-52-180/
+coverage/
+.env
+.env.*
+!.env.example
+!.env.docker.example
+*.log
+.DS_Store

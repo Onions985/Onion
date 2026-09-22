@@ -1,0 +1,58 @@
+const rows = [
+  ['admin.newBlog', '写博客', 'Write a blog'],
+  ['admin.newProject', '添加项目', 'Add a project'],
+  ['admin.newMoment', '发表手记', 'Share a moment'],
+  [
+    'admin.creationHint',
+    '写一篇博客，展示一个项目，或分享此刻的日常。',
+    'Write a blog, showcase a project, or share a moment.',
+  ],
+  ['moment.compose', '记录这一刻', 'Capture this moment'],
+  ['moment.edit', '编辑手记', 'Edit moment'],
+  ['moment.text', '手记文字', 'Moment text'],
+  ['moment.prompt', '这一刻，有什么想分享的？', 'What would you like to share?'],
+  ['moment.photos', '添加照片', 'Add photos'],
+  [
+    'moment.photoHint',
+    '最多 9 张照片，第一张自动作为封面。',
+    'Up to 9 photos. The first photo is the cover.',
+  ],
+  ['moment.cover', '封面', 'Cover'],
+  ['moment.makeCover', '设为封面', 'Set cover'],
+  ['moment.remove', '移除照片', 'Remove photo'],
+  ['moment.moveEarlier', '向前移动', 'Move earlier'],
+  ['moment.moveLater', '向后移动', 'Move later'],
+  ['moment.uploading', '正在上传', 'Uploading'],
+  [
+    'moment.uploadFailed',
+    '部分照片未能上传，已成功的照片已保留，请重新选择失败的照片。',
+    'Some photos failed to upload. Successful uploads are kept. Select the failed photos to try again.',
+  ],
+  ['moment.extra', '添加地点或日期（可选）', 'Add a place or date (optional)'],
+  [
+    'moment.legacyHint',
+    '原手记的标题、摘要与正文已合并为文字，原有照片也已带入；保存前可以调整。',
+    'The original title, summary and body are combined here, with existing photos included. You can adjust them before saving.',
+  ],
+  ['moment.onlyAuthor', '分享日常与想法', 'Everyday moments and thoughts'],
+  ['moment.publish', '发表手记', 'Publish moment'],
+  ['moment.view', '查看手记与评论', 'View moment and comments'],
+  ['moment.image', '照片', 'Photo'],
+  ['moment.close', '关闭照片', 'Close photo'],
+  ['moment.previousImage', '上一张照片', 'Previous photo'],
+  ['moment.nextImage', '下一张照片', 'Next photo'],
+  [
+    'error.MOMENT_IMAGE_LIMIT',
+    '每条手记最多添加 9 张照片，请减少选择的数量。',
+    'A moment can contain up to 9 photos. Select fewer photos.',
+  ],
+  [
+    'error.EMPTY_MOMENT',
+    '写点文字或添加一张照片，就可以发表手记。',
+    'Add some text or a photo before publishing.',
+  ],
+]
+export const momentMessages = rows.flatMap(([key, zh, en]) => [
+  { locale: 'zh', key, value: zh },
+  { locale: 'en', key, value: en },
+])

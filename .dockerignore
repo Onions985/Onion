@@ -1,0 +1,12 @@
+node_modules
+.nuxt
+.output
+.cache
+.runtime
+.env
+.env.*
+data
+backups
+.git
+tests
+*.log
