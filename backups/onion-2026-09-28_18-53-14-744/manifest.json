@@ -1,0 +1,130 @@
+{
+  "completed": true,
+  "createdAt": "2026-09-28T10:53:14.744Z",
+  "timezone": "Asia/Shanghai",
+  "database": {
+    "name": "onion",
+    "port": 3317,
+    "version": "8.0.46"
+  },
+  "consistency": "mysqldump --single-transaction (InnoDB)",
+  "tables": [
+    "auth_attempts",
+    "comment_attempts",
+    "comments",
+    "content_items",
+    "content_pins",
+    "content_revisions",
+    "content_translations",
+    "media_assets",
+    "preferences",
+    "revision_media",
+    "schema_migrations",
+    "sessions",
+    "site_profiles",
+    "site_settings",
+    "ui_messages",
+    "users"
+  ],
+  "contentCountsAfterExport": [
+    {
+      "kind": "blog",
+      "count": 68
+    },
+    {
+      "kind": "life",
+      "count": 2
+    },
+    {
+      "kind": "project",
+      "count": 8
+    }
+  ],
+  "sql": {
+    "path": "database.sql",
+    "bytes": 824741,
+    "sha256": "b345f98d0e4eac56a20f2e5bdbf3ec6ee46c5d3fdacc2014fef37f23ffb6b21a"
+  },
+  "uploads": [
+    {
+      "path": "2026-09/0fc607c2-0794-49f4-81b2-324c1dbeeefc.png",
+      "bytes": 1878369,
+      "sha256": "b8d5f46fc97b132772769a0925b172e4f4144763bf5531f7be97138a05d4ebc4"
+    },
+    {
+      "path": "2026-09/274a35b4-4207-4e06-9aa5-f0c9f5580dfb.jpg",
+      "bytes": 96371,
+      "sha256": "ac0a3700d9b46a5f9e264fa4f4466dd88814695f870fc388b173758f9da5db55"
+    },
+    {
+      "path": "2026-09/2917de7c-bfa2-4b9d-9cec-ca8763f7abf2.jpg",
+      "bytes": 52340,
+      "sha256": "90eb0aa796d0ba5df7f13d17205e5c57dcea01426c49bb6f381f53845bf3b34a"
+    },
+    {
+      "path": "2026-09/2eddd804-324f-45f3-a219-ff9f4c05c8ab.png",
+      "bytes": 67,
+      "sha256": "b95a28b208d434a182a5c2281e552f1f9021d209a8b4f8abce4f308c57a9c5cc"
+    },
+    {
+      "path": "2026-09/5654b08f-ec7e-4dbe-94c6-5b1b684f2dc7.jpg",
+      "bytes": 468986,
+      "sha256": "30ae73c67913d2f4ca96dd229f730508ef6085c3cf8b38f4f3179e36b3642949"
+    },
+    {
+      "path": "2026-09/6ef28a51-a1f5-455a-a4d6-bb3329d48ffc.png",
+      "bytes": 36416,
+      "sha256": "c7f7b2d8bea22861b807b38f5fbd231f90e3c357af3be18f732401db624a670b"
+    },
+    {
+      "path": "2026-09/b1a1e5f9-361e-44ae-955f-7faae37ad7f0.jpg",
+      "bytes": 303670,
+      "sha256": "23f2201333069fb75afb22c9a168eeaa24e196e2e9264f4892e3e5b95ff15788"
+    },
+    {
+      "path": "2026-09/b342e259-1ccc-4442-9b01-e64db0a3494e.jpg",
+      "bytes": 294163,
+      "sha256": "514abb6073f84c19fb35d631d5d3189887b7e210815937e5369afa419be0f91e"
+    },
+    {
+      "path": "2026-09/b4ddffeb-60b2-444e-bd70-9e45be5a9fce.png",
+      "bytes": 2134077,
+      "sha256": "7e7385a49de7e23d08cfddb8aa1c0ab8cc90fb0fea92e3013e2f4e63e73ad320"
+    },
+    {
+      "path": "2026-09/d1af5085-2e37-4d0f-b31b-0c5d4d873d97.png",
+      "bytes": 1627832,
+      "sha256": "5d6c3f8ad86859a3f64b02cc1726537dd65addb1db7d503b24c31fb44c1bc9bb"
+    },
+    {
+      "path": "2026-09/d225d718-a628-4c90-b7ff-b0c8ac2fc364.jpg",
+      "bytes": 46354,
+      "sha256": "65310b5952031174fc8efeb4435fafaf39a98102fd89f85f4788d6c5e3a23ff3"
+    },
+    {
+      "path": "2026-09/df7bb0e1-be3b-4323-826e-fe8156b9712b.jpg",
+      "bytes": 39665,
+      "sha256": "b04c11df148a193773974b9ebb547eb112359787e43d645caeb94d209bd318d4"
+    },
+    {
+      "path": "2026-09/e51e6eec-ede4-4b17-be7b-57d704b9cd4d.jpg",
+      "bytes": 42533,
+      "sha256": "fe5a52c5ba1c850967602cdee9c97c8f155c09606360966c97fa4dc5a5235b7c"
+    },
+    {
+      "path": "2026-09/ec7e95ad-dc8f-40ac-a664-fdb09d0657f1.jpg",
+      "bytes": 38718,
+      "sha256": "4383124f773fe8d054364860211a65df2b1fc44994138547a8f0ccc98a93a52e"
+    },
+    {
+      "path": "2026-09/fdb0221a-ce91-485d-8c4f-f59b025930ba.png",
+      "bytes": 1658514,
+      "sha256": "f2a52062be4b36e6126099843961b256edfd0566113f11d95c3e9f1a713d6ef3"
+    },
+    {
+      "path": "site/onion-avatar-20260922.png",
+      "bytes": 2152131,
+      "sha256": "05ff1d4f9f26043ecd7198df8998070d229fe6cfb07d5b965524f331c7d34044"
+    }
+  ]
+}

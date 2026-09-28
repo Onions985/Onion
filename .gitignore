@@ -7,6 +7,7 @@ node_modules/
 data/
 /backups/*
 !/backups/onion-2026-09-22_17-58-52-180/
+!/backups/onion-2026-09-28_18-53-14-744/
 coverage/
 .env
 .env.*
