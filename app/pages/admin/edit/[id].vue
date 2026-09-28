@@ -44,6 +44,10 @@ const drafts = reactive<Record<Locale, TranslationDraft>>({
   en: structuredClone(toRaw(record.value?.translations.en) || blank('en')),
 })
 const snapshots = reactive({ zh: JSON.stringify(drafts.zh), en: JSON.stringify(drafts.en) })
+for (const lang of ['zh', 'en'] as const) {
+  drafts[lang].metadata.series ??= { name: '', order: 1 }
+  snapshots[lang] = JSON.stringify(drafts[lang])
+}
 const draft = computed(() => drafts[contentLocale.value]),
   dirty = computed(
     () => JSON.stringify(drafts.zh) !== snapshots.zh || JSON.stringify(drafts.en) !== snapshots.en,
@@ -269,7 +273,7 @@ useSeoMeta({ title: () => t('admin.edit'), robots: 'noindex,nofollow' })
         </button>
       </div>
       <div>
-        <label v-if="kind === 'project'" class="checkbox"
+        <label v-if="kind === 'project' || kind === 'blog'" class="checkbox"
           ><input v-model="draft.metadata.featured" type="checkbox" />{{ t('admin.featured') }}</label
         ><label v-if="kind === 'project'" class="checkbox"
           ><input v-model="draft.metadata.flagship" type="checkbox" />{{ t('admin.flagship') }}</label
@@ -299,6 +303,18 @@ useSeoMeta({ title: () => t('admin.edit'), robots: 'noindex,nofollow' })
       ><span>{{ t('admin.technologies') }}</span
       ><input v-model="technologies"
     /></label>
+  </div>
+  <div v-if="kind === 'blog' && draft.metadata.series" class="series-editor">
+    <div class="form-grid">
+      <label class="field"
+        ><span>{{ t('admin.seriesName') }}</span
+        ><input v-model="draft.metadata.series.name" maxlength="100" /></label
+      ><label class="field"
+        ><span>{{ t('admin.seriesOrder') }}</span
+        ><input v-model.number="draft.metadata.series.order" type="number" min="1" max="10000"
+      /></label>
+    </div>
+    <p class="editor-help">{{ t('admin.seriesHint') }}</p>
   </div>
   <MarkdownEditor v-model="draft.markdown" :key="contentLocale" @save="persist()" />
   <p class="editor-help">{{ t('admin.mediaHelp') }}</p>

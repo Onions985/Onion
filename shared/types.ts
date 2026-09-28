@@ -17,11 +17,15 @@ export interface SiteConfig {
   defaultTheme: Theme
   accent: 'lilac' | 'rose' | 'sage'
   avatarId: string | null
-  contact?: { wechat: string; email: string }
+  contact?: { qq?: string; wechat: string; wechatQrId?: string | null; email: string }
+  startHere?: { blogIds: string[]; projectId: string | null }
+  now?: { zh: string; en: string; updatedOn: string }
+  socialLinks?: { label: string; url: string }[]
   writingTags: string[]
   navigation: { path: string; label: string }[]
 }
 export interface SiteResponse {
+  siteUrl: string
   config: SiteConfig
   profile: SiteProfile
   messages: Record<string, string>
@@ -29,6 +33,8 @@ export interface SiteResponse {
   preference: { locale: Locale; theme: Theme }
 }
 export interface ContentMetadata {
+  series?: { name: string; order: number }
+  projectStory?: { demoUrl: string; decision: string; outcome: string }
   projectModules?: { title: string; description: string; features: string[] }[]
   projectScreenshots?: { mediaId: string; caption: string }[]
   moment?: { text: string; imageIds: string[] }
@@ -72,6 +78,9 @@ export interface SearchResults {
   counts: Record<ContentKind | 'all', number>
 }
 export interface ContentDetail extends ContentSummary {
+  headings: { id: string; text: string; level: number }[]
+  related: ContentSummary[]
+  seriesNavigation: { previous: ContentSummary | null; next: ContentSummary | null }
   html: string
   translations: { locale: Locale; slug: string }[]
 }
@@ -97,6 +106,17 @@ export interface AdminContent {
   updatedAt: string
   translations: Partial<Record<Locale, TranslationDraft>>
 }
+export interface AdminContentSummary extends Omit<AdminContent, 'translations'> {
+  translations: Partial<
+    Record<Locale, Pick<TranslationDraft, 'title' | 'slug' | 'draftRevisionId' | 'publishedRevisionId'>>
+  >
+}
+export interface AdminContentPage {
+  items: AdminContentSummary[]
+  total: number
+  page: number
+  pageSize: number
+}
 export interface MediaAsset {
   id: string
   originalName: string
@@ -118,4 +138,10 @@ export interface CommentItem {
   createdAt: string
   contentTitle?: string
   kind?: ContentKind
+}
+export interface AdminCommentsPage {
+  items: CommentItem[]
+  total: number
+  page: number
+  pageSize: number
 }

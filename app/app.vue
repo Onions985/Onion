@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import type { SiteResponse } from '../shared/types'
+import { canonicalPath } from '#shared/discovery'
 const { locale, site, theme } = useSite()
+const route = useRoute()
+const runtimeConfig = useRuntimeConfig()
+const origin = computed(() => site.value?.siteUrl || runtimeConfig.public.siteUrl)
+const canonical = computed(() => origin.value + canonicalPath(route.path, route.query))
 const request = useRequestFetch()
 const { data, error } = await useAsyncData(
   () => `site:${locale.value}`,
@@ -23,6 +28,17 @@ useHead(() => ({
     'data-accent': site.value?.config.accent || 'lilac',
   },
   link: [
+    ...(route.path.startsWith('/admin')
+      ? []
+      : [
+          { key: 'canonical', rel: 'canonical' as const, href: canonical.value },
+          {
+            rel: 'alternate' as const,
+            type: 'application/rss+xml',
+            title: `${site.value?.profile.siteName || 'onion'} · RSS`,
+            href: `${origin.value}/feed.xml?locale=${locale.value}`,
+          },
+        ]),
     {
       key: 'site-icon',
       rel: 'icon',
@@ -33,6 +49,17 @@ useHead(() => ({
   ],
   titleTemplate: site.value ? `%s · ${site.value.profile.siteName}` : 'onion',
 }))
+useSeoMeta({
+  ogSiteName: () => site.value?.profile.siteName,
+  ogTitle: () => site.value?.profile.siteName,
+  ogDescription: () => site.value?.profile.description,
+  ogType: 'website',
+  ogUrl: () => canonical.value,
+  ogImage: () => `${origin.value}/brand/onion-share.png`,
+  ogImageAlt: () => site.value?.profile.siteName,
+  ogLocale: () => (locale.value === 'zh' ? 'zh_CN' : 'en_US'),
+  twitterCard: 'summary_large_image',
+})
 const { message } = useFeedback()
 let timeout: ReturnType<typeof setTimeout>
 watch(message, () => {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ name: string; size?: number }>(), { size: 18 })
 const paths: Record<string, string> = {
+  rss: 'M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16M5 19h.01',
   home: 'm3 10 9-7 9 7v10H3ZM9 20v-7h6v7',
   thumbtack: 'm16 3 5 5-4 1-4 4v4l-2 2-6-6 2-2h4l4-4ZM2 22l5-5',
   mail: 'M3 5h18v14H3Zm0 1 9 7 9-7',

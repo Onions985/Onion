@@ -113,10 +113,11 @@ export async function serveImage(event: H3Event, id: string) {
     [id],
   )
   const [settings] = await query<{ config: unknown }>('SELECT config FROM site_settings WHERE id=1')
-  const publicAvatar = jsonValue<SiteConfig>(settings?.config || {}).avatarId === id
+  const config = jsonValue<SiteConfig>(settings?.config || {})
+  const publicProfileImage = config.avatarId === id || config.contact?.wechatQrId === id
   const profiles = await query<{ markdown: string }>('SELECT about_markdown AS markdown FROM site_profiles')
   const inAbout = profiles.some((p) => imageReferences(p.markdown).includes(id))
-  if (!ref && !publicAvatar && !inAbout && !(await currentUser(event)))
+  if (!ref && !publicProfileImage && !inAbout && !(await currentUser(event)))
     throw createError({ statusCode: 404, statusMessage: 'MEDIA_NOT_FOUND' })
   let bytes: Buffer
   try {

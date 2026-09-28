@@ -1,6 +1,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-01',
   devtools: { enabled: false },
+  // The API also reads SITE_URL at runtime so a built image can use its deployment domain.
+  runtimeConfig: { public: { siteUrl: process.env.SITE_URL || 'http://localhost:3000' } },
   css: [
     '~/assets/css/main.css',
     '~/assets/css/collections.css',
@@ -11,6 +13,7 @@ export default defineNuxtConfig({
     '~/assets/css/about.css',
     '~/assets/css/projects.css',
     '~/assets/css/home-writing.css',
+    '~/assets/css/discovery.css',
   ],
   typescript: { strict: true },
   app: {

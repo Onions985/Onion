@@ -1,0 +1,31 @@
+{
+  "verifiedOn": "2026-09-28",
+  "sourceRoot": "D:/Users/Desktop/closet",
+  "sources": [
+    "README.md",
+    "closet-android/feature/wardrobe/src/main/java/com/onion/closet/wardrobe/viewmodel/WardrobeViewModel.kt",
+    "closet-android/feature/wardrobe/src/main/java/com/onion/closet/wardrobe/ui/WardrobeStatisticsScreen.kt",
+    "closet-common/product/wardrobe-item.md",
+    "closet-common/product/profile.md",
+    "closet-common/product/circle.md",
+    "closet-java/closet-user/closet-user-service/src/main/kotlin/com/onion/closet/controller/WardrobeGuideController.kt",
+    "closet-web/app/pages/index.vue"
+  ],
+  "screenshots": [
+    {
+      "file": "screenshots/website-home.png",
+      "source": "http://127.0.0.1:3010/",
+      "caption": "介绍官网实拍 · 品牌首页（手机为官网展示组件）"
+    },
+    {
+      "file": "screenshots/website-privacy.png",
+      "source": "http://127.0.0.1:3010/#privacy",
+      "caption": "介绍官网实拍 · 私人衣橱与主动分享的边界"
+    }
+  ],
+  "notes": [
+    "功能介绍依据本地源码和产品文档；没有据此声称线上服务或商店已发布。",
+    "Gitee 组织链接由用户提供，本次网页读取不可用；项目资料改为核对本地对应工程。",
+    "截图通过浏览器直接获取本地现有官网构建的运行画面，没有修改官网源码或伪造客户端实机界面。"
+  ]
+}

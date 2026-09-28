@@ -34,10 +34,22 @@ function run(args) {
 await run(['scripts/db-init.mjs'])
 // A reused test database may have a different administrator than the local site.
 // Create a test-only author instead of changing any existing account.
-const db = await mysql.createConnection({ host: target.hostname, port: Number(target.port || 3306), user: decodeURIComponent(target.username), password: decodeURIComponent(target.password), database: target.pathname.slice(1) })
+const db = await mysql.createConnection({
+  host: target.hostname,
+  port: Number(target.port || 3306),
+  user: decodeURIComponent(target.username),
+  password: decodeURIComponent(target.password),
+  database: target.pathname.slice(1),
+})
 try {
-  await db.execute('INSERT IGNORE INTO users(id,email,password_hash) VALUES(?,?,?)', [randomUUID(), env.ADMIN_EMAIL, await hashPassword(env.ADMIN_PASSWORD)])
-} finally { await db.end() }
+  await db.execute('INSERT IGNORE INTO users(id,email,password_hash) VALUES(?,?,?)', [
+    randomUUID(),
+    env.ADMIN_EMAIL,
+    await hashPassword(env.ADMIN_PASSWORD),
+  ])
+} finally {
+  await db.end()
+}
 await mkdir('.runtime', { recursive: true })
 const log = await open('.runtime/integration-server.log', 'w')
 const server = spawn(process.execPath, ['.output/server/index.mjs'], {
@@ -59,7 +71,21 @@ try {
     await new Promise((r) => setTimeout(r, 250))
   }
   if (!ready) throw new Error('Test server did not become healthy')
-  await run(['--import', 'tsx', '--test', 'tests/integration.test.ts', 'tests/blog-tags.test.ts', 'tests/moments.test.ts', 'tests/project-flagship.test.ts'])
+  // Suites share an author, rate-limit records and settings; serialize their mutations.
+  await run([
+    '--import',
+    'tsx',
+    '--test',
+    '--test-concurrency=1',
+    'tests/integration.test.ts',
+    'tests/blog-tags.test.ts',
+    'tests/moments.test.ts',
+    'tests/project-flagship.test.ts',
+    'tests/admin-content.test.ts',
+    'tests/admin-comments.test.ts',
+  ])
+  // These checks change shared site settings; run after the existing suites restore theirs.
+  await run(['--import', 'tsx', '--test', 'tests/discovery-integration.test.ts'])
 } finally {
   server.kill()
   await log.close()

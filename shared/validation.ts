@@ -19,9 +19,28 @@ const tagList = (max: number) =>
     .transform((values) => [...new Set(values)])
 const safeUrl = z
   .string()
+  .trim()
   .max(1000)
-  .refine((value) => !value || /^https?:\/\//i.test(value), 'Use an http(s) URL')
+  .refine((value) => {
+    if (!value) return true
+    try {
+      const url = new URL(value)
+      return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password
+    } catch {
+      return false
+    }
+  }, 'Use an http(s) URL')
 export const metadataSchema = z.object({
+  series: z
+    .object({ name: z.string().trim().max(100), order: z.number().int().min(1).max(10000) })
+    .optional(),
+  projectStory: z
+    .object({
+      demoUrl: safeUrl.default(''),
+      decision: z.string().trim().max(3000).default(''),
+      outcome: z.string().trim().max(3000).default(''),
+    })
+    .optional(),
   projectModules: z
     .array(
       z.object({
@@ -91,16 +110,43 @@ export const profileSchema = z.object({
   quote: z.string().max(500),
 })
 export const configSchema = z.object({
+  startHere: z
+    .object({
+      blogIds: z
+        .array(z.uuid())
+        .max(2)
+        .refine((ids) => new Set(ids).size === ids.length),
+      projectId: z.uuid().nullable(),
+    })
+    .optional(),
+  now: z
+    .object({
+      zh: z.string().trim().max(1200),
+      en: z.string().trim().max(1200),
+      updatedOn: z.union([z.literal(''), z.iso.date()]),
+    })
+    .refine((value) => !(value.zh || value.en) || Boolean(value.updatedOn), 'Set an update date')
+    .optional(),
+  socialLinks: z
+    .array(z.object({ label: z.string().trim().min(1).max(40), url: safeUrl.refine(Boolean, 'Enter a URL') }))
+    .max(6)
+    .optional(),
   defaultLocale: localeSchema,
   defaultTheme: themeSchema,
   accent: z.enum(['lilac', 'rose', 'sage']),
   avatarId: z.uuid().nullable(),
   contact: z
     .object({
+      qq: z
+        .string()
+        .trim()
+        .regex(/^$|^[1-9]\d{4,11}$/)
+        .default(''),
       wechat: z.string().trim().max(80).default(''),
+      wechatQrId: z.uuid().nullable().default(null),
       email: z.union([z.literal(''), z.email().max(254)]).default(''),
     })
-    .default({ wechat: '', email: '' }),
+    .default({ qq: '', wechat: '', wechatQrId: null, email: '' }),
   writingTags: tagList(24).default([]),
   navigation: z
     .array(

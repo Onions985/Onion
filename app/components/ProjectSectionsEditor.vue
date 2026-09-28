@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { ContentMetadata } from '../../shared/types'
 const metadata = defineModel<ContentMetadata>({ required: true })
+function story() {
+  return (metadata.value.projectStory ||= { demoUrl: '', decision: '', outcome: '' })
+}
 const { t } = useSite(),
   { fail } = useFeedback()
 const uploading = ref(false)
@@ -34,6 +37,35 @@ async function upload(event: Event) {
 </script>
 <template>
   <section class="project-sections-editor">
+    <h2>{{ t('project.outcome') }}</h2>
+    <p class="editor-help">{{ t('admin.storyHint') }}</p>
+    <label class="field"
+      ><span>{{ t('project.demo') }}</span
+      ><input
+        :value="metadata.projectStory?.demoUrl || ''"
+        type="url"
+        placeholder="https://"
+        maxlength="1000"
+        @input="story().demoUrl = ($event.target as HTMLInputElement).value"
+    /></label>
+    <label class="field"
+      ><span>{{ t('project.decision') }}</span
+      ><textarea
+        :value="metadata.projectStory?.decision || ''"
+        rows="4"
+        maxlength="3000"
+        @input="story().decision = ($event.target as HTMLTextAreaElement).value"
+      />
+    </label>
+    <label class="field"
+      ><span>{{ t('project.outcome') }}</span
+      ><textarea
+        :value="metadata.projectStory?.outcome || ''"
+        rows="4"
+        maxlength="3000"
+        @input="story().outcome = ($event.target as HTMLTextAreaElement).value"
+      />
+    </label>
     <h2>{{ t('project.modules') }}</h2>
     <p class="editor-help">{{ t('admin.modulesHint') }}</p>
     <div v-for="(module, index) in metadata.projectModules || []" :key="index" class="project-module-editor">

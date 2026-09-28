@@ -25,7 +25,9 @@ useSeoMeta({ title: () => t('nav.home'), description: () => site.value?.profile.
 </script>
 <template>
   <HomeIntroduction />
+  <HomeNow />
   <div ref="revealRoot" class="home-content">
+    <HomeDiscovery />
     <HomeWriting :items="data?.blog || []" />
     <section class="home-section">
       <div class="section-heading" data-reveal>

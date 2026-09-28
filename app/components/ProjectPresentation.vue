@@ -72,7 +72,18 @@ function open(image: { mediaId: string; caption: string }) {
           <span v-if="tab.count !== null" class="project-tab-count">{{ tab.count }}</span>
         </button>
       </div>
-      <div v-if="item.metadata.projectUrl || item.metadata.repositoryUrl" class="project-resource-panel">
+      <div
+        v-if="item.metadata.projectUrl || item.metadata.repositoryUrl || item.metadata.projectStory?.demoUrl"
+        class="project-resource-panel"
+      >
+        <a
+          v-if="item.metadata.projectStory?.demoUrl"
+          :href="item.metadata.projectStory.demoUrl"
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ t('project.demo') }}<AppIcon name="arrow" :size="16"
+        /></a>
         <a
           v-if="item.metadata.projectUrl"
           :href="item.metadata.projectUrl"
@@ -106,6 +117,19 @@ function open(image: { mediaId: string; caption: string }) {
         <h2>{{ t('project.overview') }}</h2>
       </div>
       <div class="prose" v-html="item.html" />
+      <div
+        v-if="item.metadata.projectStory?.decision || item.metadata.projectStory?.outcome"
+        class="project-story"
+      >
+        <section v-if="item.metadata.projectStory.decision">
+          <h3>{{ t('project.decision') }}</h3>
+          <p>{{ item.metadata.projectStory.decision }}</p>
+        </section>
+        <section v-if="item.metadata.projectStory.outcome">
+          <h3>{{ t('project.outcome') }}</h3>
+          <p>{{ item.metadata.projectStory.outcome }}</p>
+        </section>
+      </div>
     </section>
     <section
       id="project-modules"

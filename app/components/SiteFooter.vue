@@ -8,6 +8,7 @@ const { site, locale, t } = useSite()
         ><SiteAvatar :size="32" />{{ site?.profile.siteName }}<i>.</i></NuxtLink
       >
       <p>{{ site?.profile.footer }}</p>
+      <FollowLinks />
     </div>
     <div class="footer-right">
       <span>© {{ new Date().getFullYear() }} {{ site?.profile.displayName }}</span

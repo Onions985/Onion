@@ -12,8 +12,11 @@ const { data } = await useAsyncData('admin-settings', () =>
 const form = reactive(structuredClone(toRaw(data.value)!)),
   profile = computed(() => form.profiles.find((p) => p.locale === contentLocale.value)!)
 form.config.contact ??= { wechat: '', email: '' }
+form.config.contact.qq ??= ''
+form.config.contact.wechatQrId ??= null
 const contact = computed(() => form.config.contact!)
 const uploadingAvatar = ref(false)
+const uploadingWechatQr = ref(false)
 const fields = ['siteName', 'displayName', 'headline', 'description', 'motto', 'footer', 'quote'] as const
 const writingTags = computed({
   get: () => (form.config.writingTags || []).join(', '),
@@ -41,7 +44,7 @@ function toggleNav(item: { path: string; label: string }, checked: boolean) {
     : form.config.navigation.filter((n) => n.path !== item.path)
 }
 async function save() {
-  if (busy.value || uploadingAvatar.value) return
+  if (busy.value || uploadingAvatar.value || uploadingWechatQr.value) return
   busy.value = true
   try {
     await apiWrite('/api/admin/site', 'PUT', form)
@@ -72,12 +75,29 @@ async function avatar(event: Event) {
   }
 }
 useSeoMeta({ title: () => t('admin.settings'), robots: 'noindex,nofollow' })
+async function uploadWechatQr(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  if (!file) return
+  uploadingWechatQr.value = true
+  try {
+    const body = new FormData()
+    body.append('file', file)
+    const asset = await apiWrite<{ id: string }>('/api/admin/media', 'POST', body)
+    contact.value.wechatQrId = asset.id
+  } catch (error) {
+    fail(error)
+  } finally {
+    input.value = ''
+    uploadingWechatQr.value = false
+  }
+}
 </script>
 <template>
   <form @submit.prevent="save">
     <div class="admin-heading">
       <h1>{{ t('admin.settings') }}</h1>
-      <button class="button primary" :disabled="busy || uploadingAvatar">
+      <button class="button primary" :disabled="busy || uploadingAvatar || uploadingWechatQr">
         {{ t(busy ? 'loading' : 'admin.settingsSave') }}
       </button>
     </div>
@@ -158,9 +178,44 @@ useSeoMeta({ title: () => t('admin.settings'), robots: 'noindex,nofollow' })
         <p class="avatar-setting-hint">{{ t(uploadingAvatar ? 'loading' : 'admin.avatarHint') }}</p>
         <h2>{{ t('about.contact') }}</h2>
         <label class="field"
+          ><span>{{ t('about.qq') }}</span
+          ><input
+            v-model="contact.qq"
+            inputmode="numeric"
+            pattern="[1-9][0-9]{4,11}"
+            maxlength="12"
+            autocomplete="off"
+        /></label>
+        <label class="field"
           ><span>{{ t('about.wechat') }}</span
           ><input v-model="contact.wechat" maxlength="80" autocomplete="off"
         /></label>
+        <div class="field">
+          <span>{{ t('contact.wechatQr') }}</span>
+          <img
+            v-if="contact.wechatQrId"
+            :src="`/api/media/${contact.wechatQrId}`"
+            :alt="t('contact.wechatQr')"
+            class="wechat-qr-preview"
+          />
+          <input
+            type="file"
+            accept="image/png,image/jpeg,image/webp,image/gif"
+            :aria-label="t('contact.wechatQr')"
+            :disabled="uploadingWechatQr || busy"
+            @change="uploadWechatQr"
+          />
+          <small>{{ t(uploadingWechatQr ? 'loading' : 'contact.qrHint') }}</small>
+          <button
+            v-if="contact.wechatQrId"
+            type="button"
+            class="small-button"
+            :disabled="uploadingWechatQr || busy"
+            @click="contact.wechatQrId = null"
+          >
+            {{ t('contact.removeQr') }}
+          </button>
+        </div>
         <label class="field"
           ><span>{{ t('about.email') }}</span
           ><input v-model="contact.email" type="email" maxlength="254" autocomplete="off"
@@ -179,5 +234,6 @@ useSeoMeta({ title: () => t('admin.settings'), robots: 'noindex,nofollow' })
         >
       </aside>
     </div>
+    <SiteDiscoverySettings v-model="form.config" />
   </form>
 </template>

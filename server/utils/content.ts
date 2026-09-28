@@ -6,6 +6,8 @@ import { draftSchema } from '../../shared/validation'
 import { normalizeMomentDraft } from '../../shared/moment'
 import type {
   AdminContent,
+  AdminContentPage,
+  AdminContentSummary,
   BlogTags,
   ContentDetail,
   ContentMetadata,
@@ -16,7 +18,7 @@ import type {
   NavigationPreview,
 } from '../../shared/types'
 import { query, execute, transaction, jsonValue } from './database'
-import { imageReferences, readingMinutes, renderMarkdown, markdownText } from './markdown'
+import { imageReferences, readingMinutes, renderArticle, markdownText } from './markdown'
 
 type Row = Record<string, any>
 const pinnedExpression =
@@ -140,7 +142,116 @@ export async function publicDetail(locale: Locale, kind: string, slug: string): 
     'SELECT locale,published_slug AS slug FROM content_translations WHERE content_id=? AND published_revision_id IS NOT NULL',
     [row.id],
   )
-  return { ...summary(row), html: renderMarkdown(row.markdown), translations }
+  const item = summary(row)
+  const related = kind === 'blog' ? await relatedArticles(locale, item) : []
+  const seriesNavigation =
+    kind === 'blog' ? await seriesNeighbours(locale, item) : { previous: null, next: null }
+  return { ...item, ...renderArticle(row.markdown), translations, related, seriesNavigation }
+}
+
+async function relatedArticles(locale: Locale, item: ContentSummary) {
+  if (!item.metadata.tags.length) return []
+  const rows = await query<Row>(
+    `${selectPublished} WHERE c.archived_at IS NULL AND c.kind='blog' AND ${preferredTranslation} AND c.id<>? AND JSON_OVERLAPS(JSON_EXTRACT(r.metadata,'$.tags'),CAST(? AS JSON)) ORDER BY t.published_at DESC,c.id LIMIT 3`,
+    [locale, item.id, JSON.stringify(item.metadata.tags)],
+  )
+  return rows.map(summary)
+}
+async function seriesNeighbours(locale: Locale, item: ContentSummary) {
+  const series = item.metadata.series
+  if (!series?.name) return { previous: null, next: null }
+  const rows = await query<Row>(
+    `${selectPublished} WHERE c.archived_at IS NULL AND c.kind='blog' AND ${preferredTranslation} AND JSON_UNQUOTE(JSON_EXTRACT(r.metadata,'$.series.name'))=? ORDER BY CAST(JSON_EXTRACT(r.metadata,'$.series.order') AS UNSIGNED),t.published_at,c.id`,
+    [locale, series.name],
+  )
+  const index = rows.findIndex((row) => row.id === item.id)
+  return {
+    previous: index > 0 ? summary(rows[index - 1]!) : null,
+    next: index >= 0 && index < rows.length - 1 ? summary(rows[index + 1]!) : null,
+  }
+}
+export async function publicSelections(locale: Locale) {
+  const [settings] = await query<{ config: unknown }>('SELECT config FROM site_settings WHERE id=1')
+  const config = jsonValue<SiteConfig>(settings?.config)
+  async function selected(kind: 'blog' | 'project', ids: string[], limit: number) {
+    const filter = ids.length
+      ? `c.id IN (${ids.map(() => '?').join(',')})`
+      : `(JSON_EXTRACT(r.metadata,'$.featured')=true OR ${pinnedExpression})`
+    const rows = await query<Row>(
+      `${selectPublished} WHERE c.archived_at IS NULL AND ${preferredTranslation} AND c.kind=? AND ${filter} ORDER BY pinned DESC,t.published_at DESC,c.id LIMIT ${limit}`,
+      [locale, kind, ...ids],
+    )
+    if (ids.length) rows.sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id))
+    return rows.map(summary)
+  }
+  const [blog, project] = await Promise.all([
+    selected('blog', config?.startHere?.blogIds || [], 2),
+    selected('project', config?.startHere?.projectId ? [config.startHere.projectId] : [], 1),
+  ])
+  return { items: [...blog, ...project] }
+}
+// Export only published revision data. Feed ordering is chronological, independent of pins.
+export async function publicFeed(locale: Locale) {
+  const rows = await query<Row>(
+    `${selectPublished} WHERE c.archived_at IS NULL AND c.kind='blog' AND ${preferredTranslation} ORDER BY t.published_at DESC,c.id LIMIT 50`,
+    [locale],
+  )
+  return rows.map(summary)
+}
+export async function publicSitemap() {
+  return query<{ kind: ContentSummary['kind']; locale: Locale; slug: string; modifiedAt: string }>(
+    `SELECT c.kind,t.locale,r.slug,r.created_at AS modifiedAt FROM content_items c JOIN content_translations t ON t.content_id=c.id JOIN content_revisions r ON r.id=t.published_revision_id WHERE c.archived_at IS NULL AND (c.kind='blog' OR t.locale='zh') ORDER BY c.id,t.locale`,
+  )
+}
+export async function adminContent(kind?: string, requestedPage = 1, q = ''): Promise<AdminContentPage> {
+  const pageSize = 20,
+    conditions = ['c.archived_at IS NULL'],
+    args: string[] = []
+  if (kind) {
+    conditions.push('c.kind=?')
+    args.push(kind)
+  }
+  if (q) {
+    conditions.push(
+      `EXISTS(SELECT 1 FROM content_translations t JOIN content_revisions r ON r.id=t.draft_revision_id WHERE t.content_id=c.id AND (c.kind='blog' OR t.locale='zh') AND ${searchCondition})`,
+    )
+    args.push(...searchArguments(q))
+  }
+  const where = conditions.join(' AND ')
+  const [count] = await query<{ total: number }>(
+    `SELECT COUNT(*) AS total FROM content_items c WHERE ${where}`,
+    args,
+  )
+  const total = Number(count?.total || 0),
+    page = Math.min(requestedPage, Math.max(1, Math.ceil(total / pageSize)))
+  const rows = await query<Omit<AdminContentSummary, 'translations'>>(
+    `SELECT c.id,c.kind,${pinnedExpression} AS pinned,c.created_at AS createdAt,c.updated_at AS updatedAt FROM content_items c WHERE ${where} ORDER BY c.updated_at DESC,c.id LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}`,
+    args,
+  )
+  const items: AdminContentSummary[] = rows.map((row) => ({
+    ...row,
+    pinned: Boolean(row.pinned),
+    translations: {},
+  }))
+  if (items.length) {
+    const translations = await query<{
+      contentId: string
+      locale: Locale
+      title: string
+      slug: string
+      draftRevisionId: string | null
+      publishedRevisionId: string | null
+    }>(
+      `SELECT t.content_id AS contentId,t.locale,r.title,r.slug,t.draft_revision_id AS draftRevisionId,t.published_revision_id AS publishedRevisionId FROM content_translations t JOIN content_revisions r ON r.id=t.draft_revision_id WHERE t.content_id IN (${items.map(() => '?').join(',')})`,
+      items.map((item) => item.id),
+    )
+    const byId = new Map(items.map((item) => [item.id, item]))
+    for (const { contentId, locale, ...translation } of translations) {
+      const item = byId.get(contentId)!
+      if (item.kind === 'blog' || locale === 'zh') item.translations[locale] = translation
+    }
+  }
+  return { items, total, page, pageSize }
 }
 export async function adminDetail(id: string, connection?: PoolConnection): Promise<AdminContent> {
   const [item] = await query<Row>(

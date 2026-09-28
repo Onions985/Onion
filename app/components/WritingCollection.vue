@@ -25,6 +25,7 @@ const years = computed(() => [...new Set(archive.value.map((item) => item.publis
       </div>
     </header>
     <BlogTagNav />
+    <FollowLinks description />
     <slot />
     <div v-if="items.length" class="writing-layout">
       <div class="writing-main">

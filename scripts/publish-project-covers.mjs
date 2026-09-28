@@ -17,13 +17,18 @@ async function request(path, method = 'GET', body) {
 }
 await request('/api/auth/login', 'POST', { email: process.env.ADMIN_EMAIL, password: process.env.ADMIN_PASSWORD })
 try {
-  const { items } = await request('/api/admin/content')
-  const selected = ['opc-devops', 'talking-rounds', 'tanxiaoer'].map(slug => {
+  const items = []
+  for (let page = 1; ; page++) {
+    const result = await request(`/api/admin/content?kind=project&page=${page}`)
+    items.push(...result.items)
+    if (result.page * result.pageSize >= result.total) break
+  }
+  const selected = await Promise.all(['opc-devops', 'talking-rounds', 'tanxiaoer'].map(async slug => {
     const item = items.find(i => i.kind === 'project' && i.translations.zh?.slug === slug)
     assert(item, `Missing project: ${slug}`)
     assert.equal(item.translations.zh.draftRevisionId, item.translations.zh.publishedRevisionId, `Unpublished edits preserved: ${slug}`)
-    return item
-  })
+    return request(`/api/admin/content/${item.id}`)
+  }))
   await mkdir('.runtime/project-covers', { recursive: true })
   await writeFile(`.runtime/project-covers/before-${Date.now()}.json`, JSON.stringify(selected, null, 2))
   const result = []

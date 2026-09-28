@@ -29,6 +29,8 @@ import {
   publicNavigation,
   publicBlogTags,
   publicDetail,
+  publicSelections,
+  adminContent,
   adminDetail,
   createContent,
   saveContent,
@@ -40,6 +42,8 @@ import { uploadImage, serveImage } from '../utils/media'
 import type { SiteConfig, SiteProfile } from '../../shared/types'
 import { commentSchema, listComments, addComment, adminComments } from '../utils/comments'
 import { clientIp } from '../utils/client-ip'
+import { siteCopy } from '../../shared/site-copy'
+import { siteOrigin } from '../utils/site-origin'
 
 const profileColumns =
   'locale,site_name AS siteName,display_name AS displayName,headline,description,motto,about_markdown AS aboutMarkdown,footer,quote'
@@ -78,14 +82,16 @@ export default defineEventHandler(async (event) => {
         ])
       : []
     return {
+      siteUrl: siteOrigin(),
       config,
       profile,
-      messages: Object.fromEntries(rows.map((r) => [r.key, r.value])),
+      messages: { ...siteCopy(locale), ...Object.fromEntries(rows.map((r) => [r.key, r.value])) },
       aboutHtml: renderMarkdown(profile?.aboutMarkdown || ''),
       preference: preference || { locale: config.defaultLocale, theme: config.defaultTheme },
     }
   }
   if (route === 'navigation' && method === 'GET') return publicNavigation(locale)
+  if (route === 'selections' && method === 'GET') return publicSelections(locale)
   if (route === 'search' && method === 'GET')
     return publicSearch(
       locale,
@@ -170,6 +176,9 @@ export default defineEventHandler(async (event) => {
       return adminComments(
         z.enum(['pending', 'approved', 'hidden', '']).safeParse(params.status).data || '',
         Math.floor(Math.max(1, Math.min(10000, Number(params.page) || 1))),
+        String(params.q || '')
+          .trim()
+          .slice(0, 200),
       )
     if (path[1] === 'comments' && path.length === 3 && method === 'PUT') {
       const body = await readJson(event, z.object({ status: z.enum(['pending', 'approved', 'hidden']) })),
@@ -210,6 +219,7 @@ export default defineEventHandler(async (event) => {
       await validateMedia([
         ...new Set([
           ...(body.config.avatarId ? [body.config.avatarId] : []),
+          ...(body.config.contact.wechatQrId ? [body.config.contact.wechatQrId] : []),
           ...body.profiles.flatMap((p) => imageReferences(p.aboutMarkdown)),
         ]),
       ])
@@ -241,12 +251,20 @@ export default defineEventHandler(async (event) => {
           "SELECT id,original_name AS originalName,mime_type AS mimeType,size,width,height,created_at AS createdAt,CONCAT('/api/media/',id) AS url FROM media_assets ORDER BY created_at DESC LIMIT 200",
         ),
       }
-    if (route === 'admin/content' && method === 'GET') {
-      const rows = await query<{ id: string }>(
-        'SELECT id FROM content_items WHERE archived_at IS NULL ORDER BY updated_at DESC LIMIT 200',
+    if (route === 'admin/published-content' && method === 'GET')
+      return {
+        items: await query(
+          `SELECT c.id,c.kind,r.title FROM content_items c JOIN content_translations t ON t.content_id=c.id JOIN content_revisions r ON r.id=t.published_revision_id WHERE c.archived_at IS NULL AND c.kind IN ('blog','project') AND t.id=(SELECT p.id FROM content_translations p WHERE p.content_id=c.id AND p.published_revision_id IS NOT NULL ORDER BY (p.locale='zh') DESC LIMIT 1) ORDER BY t.published_at DESC,c.id`,
+        ),
+      }
+    if (route === 'admin/content' && method === 'GET')
+      return adminContent(
+        kindSchema.safeParse(params.kind).data,
+        Math.floor(Math.max(1, Math.min(10000, Number(params.page) || 1))),
+        String(params.q || '')
+          .trim()
+          .slice(0, 200),
       )
-      return { items: await Promise.all(rows.map((r) => adminDetail(r.id))) }
-    }
     if (route === 'admin/content' && method === 'POST') {
       const { kind, ...body } = await readJson(event, draftSchema.extend({ kind: kindSchema }))
       return createContent(user.id, kind, body)

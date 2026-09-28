@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ContentSummary } from '../../../shared/types'
+import { hasContact } from '#shared/contact'
 definePageMeta({ validate: (route) => ['zh', 'en'].includes(String(route.params.locale)) })
 const { site, t, locale, contentUrl } = useSite()
 const contact = computed(() => site.value?.config.contact)
@@ -13,7 +14,11 @@ const { data: projects } = await useAsyncData(
   () =>
     $fetch<{ items: ContentSummary[] }>('/api/content', { query: { kind: 'project', locale: locale.value } }),
 )
-useSeoMeta({ title: () => t('nav.about'), description: () => site.value?.profile.description })
+useSeoMeta({
+  title: () => t('nav.about'),
+  description: () => site.value?.profile.description,
+  ogTitle: () => `${t('nav.about')} · ${site.value?.profile.displayName}`,
+})
 </script>
 <template>
   <div class="about-page">
@@ -70,7 +75,7 @@ useSeoMeta({ title: () => t('nav.about'), description: () => site.value?.profile
       </div>
     </section>
     <section
-      v-if="contact?.wechat || contact?.email"
+      v-if="contact && hasContact(contact)"
       id="contact"
       class="about-contact"
       aria-labelledby="contact-heading"
@@ -85,20 +90,7 @@ useSeoMeta({ title: () => t('nav.about'), description: () => site.value?.profile
           <AppIcon name="check" :size="14" />{{ t(key) }}
         </li>
       </ul>
-      <dl class="contact-list">
-        <div v-if="contact.wechat" class="contact-card">
-          <AppIcon name="chat" :size="23" />
-          <dt>{{ t('about.wechat') }}</dt>
-          <dd>{{ contact.wechat }}</dd>
-        </div>
-        <div v-if="contact.email" class="contact-card">
-          <AppIcon name="mail" :size="23" />
-          <dt>{{ t('about.email') }}</dt>
-          <dd>
-            <a :href="`mailto:${contact.email}`">{{ contact.email }}<AppIcon name="arrow" :size="16" /></a>
-          </dd>
-        </div>
-      </dl>
+      <ContactMethods :contact="contact" />
     </section>
   </div>
 </template>

@@ -21,6 +21,8 @@ const { data, error } = await useAsyncData(
 )
 useSeoMeta({
   title: () => (tag.value ? `# ${tag.value} · ${t('nav.writing')}` : t(`nav.${section.value}`)),
+  ogTitle: () => (tag.value ? `# ${tag.value} · ${t('nav.writing')}` : t(`nav.${section.value}`)),
+  ogDescription: () => t(`${section.value}.subtitle`),
   description: () => t(`${section.value}.subtitle`),
 })
 </script>

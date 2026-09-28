@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { hasContact } from '#shared/contact'
 const { site, t, locale } = useSite()
 const stars = [
   [7, 29],
@@ -41,6 +42,13 @@ const stars = [
       </h1>
       <p class="intro-description">{{ site?.profile.description }}</p>
       <p v-if="site?.profile.quote" class="intro-quote">{{ site.profile.quote }}</p>
+      <div class="intro-actions">
+        <NuxtLink class="button primary" :to="`/${locale}/projects`"
+          >{{ t('start.works') }}<AppIcon name="right" :size="16" /></NuxtLink
+        ><NuxtLink v-if="hasContact(site?.config.contact)" class="button" :to="`/${locale}/about#contact`">{{
+          t('about.contact')
+        }}</NuxtLink>
+      </div>
     </div>
     <a class="intro-scroll" href="#recent-writing"
       ><span>{{ t('home.scroll') }}</span

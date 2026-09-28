@@ -13,8 +13,29 @@ const md = new MarkdownIt({
     return ''
   },
 })
+export function renderArticle(source: string) {
+  const tokens = md.parse(source, {})
+  const headings: { id: string; text: string; level: number }[] = []
+  // Numbered, document-local anchors remain deterministic across SSR and hydration.
+  for (let index = 0; index < tokens.length; index++) {
+    const token = tokens[index]!
+    if (token.type !== 'heading_open' || !['h2', 'h3', 'h4'].includes(token.tag)) continue
+    const inline = tokens[index + 1]
+    const text = (inline?.children || [])
+      .filter((child) => ['text', 'code_inline', 'image'].includes(child.type))
+      .map((child) => child.content)
+      .join('')
+    const id = `section-${headings.length + 1}`
+    token.attrSet('id', id)
+    headings.push({ id, text, level: Number(token.tag.slice(1)) })
+  }
+  return { html: cleanMarkdown(md.renderer.render(tokens, md.options, {})), headings }
+}
 export function renderMarkdown(source: string) {
-  return sanitizeHtml(md.render(source), {
+  return cleanMarkdown(md.render(source))
+}
+function cleanMarkdown(html: string) {
+  return sanitizeHtml(html, {
     allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img', 'mark', 'del', 'input', 'details', 'summary'],
     allowedAttributes: {
       a: ['href', 'title'],

@@ -13,7 +13,7 @@
     "postinstall": "nuxt prepare",
     "db:init": "node --env-file-if-exists=.env scripts/db-init.mjs",
     "db:backup": "node --env-file-if-exists=.env scripts/backup-db.mjs",
-    "test": "node --import tsx --test tests/core.test.ts tests/moment-unit.test.ts",
+    "test": "node --import tsx --test tests/core.test.ts tests/moment-unit.test.ts tests/discovery.test.ts",
     "test:integration": "node --env-file-if-exists=.env scripts/check-integration.mjs",
     "dev:db": "node scripts/dev-mysql.mjs",
     "dev:db:stop": "node scripts/stop-dev-mysql.mjs"

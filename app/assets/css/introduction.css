@@ -196,6 +196,14 @@
   line-height: 1.7;
   margin: -8px 0 24px;
 }
+.wechat-qr-preview {
+  max-width: 220px;
+  max-height: 260px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
 @media (hover: hover) and (pointer: fine) {
   .intro-avatar:hover {
     transform: translateY(-3px);

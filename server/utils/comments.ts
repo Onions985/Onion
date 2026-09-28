@@ -4,6 +4,7 @@ import { query, execute } from './database'
 import { currentUser } from './auth'
 import { z } from 'zod'
 import { clientIp } from './client-ip'
+import type { AdminCommentsPage, CommentItem } from '../../shared/types'
 export const commentSchema = z.object({
   contentId: z.uuid(),
   parentId: z.uuid().nullable().default(null),
@@ -86,16 +87,31 @@ export async function addComment(event: H3Event, body: z.infer<typeof commentSch
   )
   return { id, status: user ? 'approved' : 'pending' }
 }
-export async function adminComments(status: string, page = 1) {
-  const where = status ? ' AND m.status=?' : '',
-    args = status ? [status] : []
+export async function adminComments(status: string, requestedPage = 1, q = ''): Promise<AdminCommentsPage> {
+  const conditions = ['c.archived_at IS NULL'],
+    args: string[] = []
+  if (status) {
+    conditions.push('m.status=?')
+    args.push(status)
+  }
+  if (q) {
+    const term = `%${q.replace(/[\\%_]/g, '\\$&')}%`
+    conditions.push(
+      `(m.body LIKE ? OR m.author_name LIKE ? OR EXISTS(SELECT 1 FROM content_translations t JOIN content_revisions r ON r.id=t.draft_revision_id WHERE t.content_id=c.id AND (c.kind='blog' OR t.locale='zh') AND r.title LIKE ?))`,
+    )
+    args.push(term, term, term)
+  }
+  const where = conditions.join(' AND ')
   const [count] = await query<{ total: number }>(
-    `SELECT COUNT(*) AS total FROM comments m JOIN content_items c ON c.id=m.content_id WHERE c.archived_at IS NULL${where}`,
+    `SELECT COUNT(*) AS total FROM comments m JOIN content_items c ON c.id=m.content_id WHERE ${where}`,
     args,
   )
-  const items = await query(
-    `SELECT m.id,m.content_id AS contentId,m.parent_id AS parentId,m.author_name AS authorName,m.body,m.is_author AS isAuthor,m.status,m.created_at AS createdAt,c.kind,(SELECT r.title FROM content_translations t JOIN content_revisions r ON r.id=t.draft_revision_id WHERE t.content_id=c.id ORDER BY (t.locale='zh') DESC LIMIT 1) AS contentTitle FROM comments m JOIN content_items c ON c.id=m.content_id WHERE c.archived_at IS NULL${where} ORDER BY m.created_at DESC,m.id LIMIT 30 OFFSET ${(page - 1) * 30}`,
+  const total = Number(count?.total || 0),
+    pageSize = 30,
+    page = Math.min(requestedPage, Math.max(1, Math.ceil(total / pageSize)))
+  const items = await query<CommentItem>(
+    `SELECT m.id,m.content_id AS contentId,m.parent_id AS parentId,m.author_name AS authorName,m.body,m.is_author AS isAuthor,m.status,m.created_at AS createdAt,c.kind,(SELECT r.title FROM content_translations t JOIN content_revisions r ON r.id=t.draft_revision_id WHERE t.content_id=c.id ORDER BY (t.locale='zh') DESC LIMIT 1) AS contentTitle FROM comments m JOIN content_items c ON c.id=m.content_id WHERE ${where} ORDER BY m.created_at DESC,m.id LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}`,
     args,
   )
-  return { items, total: Number(count?.total || 0), page, pageSize: 30 }
+  return { items, total, page, pageSize }
 }

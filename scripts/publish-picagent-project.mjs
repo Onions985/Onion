@@ -53,7 +53,12 @@ await request('/api/auth/login', 'POST', {
   password: process.env.ADMIN_PASSWORD,
 })
 try {
-  const { items } = await request('/api/admin/content')
+  const items = []
+  for (let page = 1; ; page++) {
+    const result = await request(`/api/admin/content?kind=project&page=${page}`)
+    items.push(...await Promise.all(result.items.map(item => request(`/api/admin/content/${item.id}`))))
+    if (result.page * result.pageSize >= result.total) break
+  }
   const existing = items.find((item) => item.kind === 'project' && item.translations.zh?.slug === 'picagent')
   if (existing) {
     const current = existing.translations.zh

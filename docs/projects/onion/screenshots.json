@@ -1,0 +1,8 @@
+[
+  { "file": "home.png", "caption": "首页 · 个人介绍与作品入口", "cover": true },
+  { "file": "home-now.png", "caption": "悬浮近况 · 点击展开最近在做什么" },
+  { "file": "writing.png", "caption": "博客 · 标签筛选与文章列表" },
+  { "file": "article.png", "caption": "文章阅读 · 内容简介与文章目录" },
+  { "file": "projects.png", "caption": "项目展示 · 独立作品与技术栈" },
+  { "file": "admin-content.png", "caption": "创作后台 · 内容搜索、分类与分页管理" }
+]

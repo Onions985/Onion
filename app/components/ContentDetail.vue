@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ContentDetail, ContentKind } from '../../shared/types'
+import { contentPath } from '#shared/discovery'
 const props = defineProps<{ kind: ContentKind }>(),
   route = useRoute(),
   { site, locale, t, translations, contentUrl } = useSite()
@@ -17,12 +18,36 @@ if (error.value)
   throw createError({ statusCode: error.value.statusCode || 404, statusMessage: 'Content not found' })
 watch(data, (value) => (translations.value = value?.translations || []), { immediate: true })
 onBeforeUnmount(() => (translations.value = []))
+const canonical = computed(() =>
+  data.value
+    ? `${site.value?.siteUrl || ''}${contentPath(data.value, props.kind === 'blog' ? data.value.locale : locale.value)}`
+    : '',
+)
+useHead(() => ({
+  link: data.value
+    ? [
+        { key: 'canonical', rel: 'canonical', href: canonical.value },
+        ...data.value.translations.map((item) => ({
+          rel: 'alternate' as const,
+          type: 'text/html',
+          hreflang: item.locale === 'zh' ? 'zh-CN' : 'en',
+          href: `${site.value?.siteUrl || ''}${contentPath({ kind: props.kind, slug: item.slug }, item.locale)}`,
+        })),
+      ]
+    : [],
+}))
 useSeoMeta({
   title: () => data.value?.title,
   description: () => data.value?.summary,
   ogTitle: () => data.value?.title,
   ogDescription: () => data.value?.summary,
   ogType: 'article',
+  ogUrl: () => canonical.value,
+  ogImage: () =>
+    `${site.value?.siteUrl || ''}${data.value?.coverId ? '/api/media/' + data.value.coverId : '/brand/onion-share.png'}`,
+  ogImageAlt: () => data.value?.title,
+  ogLocale: () => (data.value?.locale === 'zh' ? 'zh_CN' : 'en_US'),
+  articlePublishedTime: () => (data.value ? data.value.publishedAt.replace(' ', 'T') + 'Z' : undefined),
 })
 </script>
 <template>
@@ -110,7 +135,7 @@ useSeoMeta({
         </div>
       </header>
       <img v-if="data.coverId" :src="`/api/media/${data.coverId}`" :alt="data.title" class="detail-cover" />
-      <div class="prose" v-html="data.html" />
+      <ArticleReading :article="data" />
     </template>
     <BlogTagLinks v-if="kind === 'blog'" :tags="data.metadata.tags" class="detail-tags" />
     <div v-else-if="kind !== 'life'" class="tags detail-tags">
